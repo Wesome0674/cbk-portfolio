@@ -2,6 +2,7 @@ import React from "react";
 import { Typographie } from "../design-system/Typographie";
 import { Button } from "../design-system/Button";
 import Image from "next/image";
+import { Links } from "../design-system/Links";
 
 const Header = () => {
   return (
