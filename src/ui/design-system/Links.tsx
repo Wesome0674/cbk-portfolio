@@ -21,19 +21,19 @@ export const Links = ({
 
   switch (variant) {
     case "normal":
-      variantStyles = "text-base uppercase font-normal";
+      variantStyles = " text-primary text-base uppercase font-normal";
       break;
     case "underline":
-      variantStyles = "text-base font-normal";
+      variantStyles = " text-primary text-base font-normal";
       iconSize = 20;
       break;
     case "footer":
       variantStyles =
-        "text-secondary font-calfine text-[40px] text-large-effect";
+        " text-primary text-secondary  font-calfine text-[40px] text-large-effect";
       break;
     case "externe":
       variantStyles =
-        "text-base font-normal underline";
+        " text-primary text-base font-normal underline";
       break;
   }
 
