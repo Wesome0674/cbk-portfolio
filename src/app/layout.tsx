@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,10 +14,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
-        {children}
+      <body className={`antialiased relative`}>
+        <Image
+          src="/img/png/bg.png"
+          width={1920}
+          height={1080}
+          alt=""
+          className="fixed h-full w-full z-[-1] object-cover"
+        />
+        <div className="max-w-[1760px] mx-auto">{children}</div>
       </body>
     </html>
   );
