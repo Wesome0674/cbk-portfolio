@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
+import { CtaScroll } from "@/ui/components/ctaScroll";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased relative`}>
+      <body className={`antialiased relative min-h-screen `}>
         <Image
           src="/img/png/bg.png"
           width={1920}
@@ -22,7 +23,10 @@ export default function RootLayout({
           alt=""
           className="fixed h-full w-full z-[-1] object-cover"
         />
-        <div className="max-w-[1760px] mx-auto">{children}</div>
+        <div className="max-w-[1760px] mx-auto px-4">{children}</div>
+        <div className="fixed bottom-4 right-4">
+          <CtaScroll variant="contact" />
+        </div>
       </body>
     </html>
   );

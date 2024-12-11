@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { GoChevronDown } from "react-icons/go";
+import Car from "./Car";
 
 const NavBar = () => {
   return (
@@ -18,11 +19,21 @@ const NavBar = () => {
           />
         </div>
         <ul className="flex items-center gap-[60px] w-fit">
-          <Links className="w-max" variant="normal">Home</Links>
-          <Links className="w-max" variant="normal">About me</Links>
-          <Links className="w-max" variant="normal">My skills</Links>
-          <Links className="w-max" variant="normal">My work</Links>
-          <Links className="w-max" variant="normal">contact</Links>
+          <Links className="w-max" variant="normal">
+            Home
+          </Links>
+          <Links className="w-max" variant="normal">
+            About me
+          </Links>
+          <Links className="w-max" variant="normal">
+            My skills
+          </Links>
+          <Links className="w-max" variant="normal">
+            My work
+          </Links>
+          <Links className="w-max" variant="normal">
+            contact
+          </Links>
         </ul>
         <div className="flex items-center gap-[35px] w-full justify-end">
           <Links variant="externe">
@@ -31,13 +42,14 @@ const NavBar = () => {
           </Links>
           <div className="flex items-center gap-2">
             <Image alt="logo" src="/img/svg/GB.svg" width={32} height={24} />
-            <div className="flex items-center gap-[5px]">
+            <div className="flex items-center gap-[5px] cursor-pointer">
               <Typographie>EN</Typographie>
               <GoChevronDown />
             </div>
           </div>
         </div>
       </div>
+      <Car />
     </nav>
   );
 };

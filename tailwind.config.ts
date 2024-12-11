@@ -64,6 +64,7 @@ export default {
       base: [
         "18px",
         {
+          lineHeight: "22px",
         },
       ],
       sm: [

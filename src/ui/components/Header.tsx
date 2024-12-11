@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="mt-[87px]">
-      <div className="flex flex-col items-center gap-[30px]">
+    <header className="mt-[112px]">
+      <div className="flex flex-col  w-fit mx-auto items-center gap-[30px]">
         <div className="flex flex-col items-center gap-[10px]">
           <Typographie
             className="text-center font-calfine uppercase"
@@ -14,7 +14,7 @@ const Header = () => {
             theme="secondary"
             textEffect="large"
           >
-            I’m a creative web <br />{" "}
+            I’m a creative web <br />
             <Typographie
               variant="h1"
               theme="tercery"
@@ -31,7 +31,7 @@ const Header = () => {
               width={14}
               height={19.09}
             />
-            <Typographie variant="h6">BASED IN FRANCE</Typographie>
+            <Typographie variant="link" weight="medium">BASED IN FRANCE</Typographie>
             <Image
               alt="logo"
               src="/img/svg/long.svg"
@@ -41,7 +41,7 @@ const Header = () => {
           </div>
         </div>
 
-        <Typographie className="uppercase text-center max-w-[776px]">
+        <Typographie className="uppercase text-center max-w-[776px] ">
           Hi i’m Boularand Killian, a 18 year old young man passionate about Web
           technologies and Entrepreneurship. Ready to take this journey with me
           to discover my personal world and what i do ?

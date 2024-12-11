@@ -74,19 +74,19 @@ export const Typographie = ({
 
   switch (weight) {
     case "light":
-      weightStyles = "text-light";
+      weightStyles = "font-light";
       break;
     case "regular":
-      weightStyles = "text-normal";
+      weightStyles = "font-normal";
       break;
     case "medium":
-      weightStyles = "text-medium";
+      weightStyles = "font-medium";
       break;
     case "bold":
-      weightStyles = "text-bold";
+      weightStyles = "font-bold";
       break;
     case "black":
-      weightStyles = "text-black";
+      weightStyles = "font-black";
       break;
   }
 
