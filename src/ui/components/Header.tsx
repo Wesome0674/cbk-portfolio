@@ -51,6 +51,7 @@ const Header = () => {
           <Button variant="outline">MY SKILLS</Button>
         </div>
       </div>
+    
     </header>
   );
 };
