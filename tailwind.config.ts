@@ -75,6 +75,15 @@ export default {
       ],
     },
     extend: {
+      keyframes: {
+        slider: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }, // Déplace la moitié du contenu total
+        },
+      },
+      animation: {
+        slider: "slider 7s linear infinite",
+      },
       colors: {
         primary: "#1C1B29",
         secondary: "#FBFBEB",
