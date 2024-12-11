@@ -14,18 +14,18 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("fonts/CalfineDEMO.woff2") format("woff2"),
-      url("fonts/CalfineDEMO.woff") format("woff"),
-      url("fonts/Calfinedemo.otf") format("truetype");
+    src: url("/fonts/CalfineDEMO.woff2") format("woff2"),
+      url("/fonts/CalfineDEMO.woff") format("woff"),
+      url("/fonts/Calfinedemo.otf") format("truetype");
   }
   @font-face {
     font-family: "druk";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url("fonts/DrukCond-Super.woff2") format("woff2"),
-      url("fonts/DrukCond-Super.woff") format("woff"),
-      url("fonts/DrukCond-Super-Trial.otf") format("truetype");
+    src: url("/fonts/DrukCond-Super.woff2") format("woff2"),
+      url("/fonts/DrukCond-Super.woff") format("woff"),
+      url("/fonts/DrukCond-Super-Trial.otf") format("truetype");
   }
 }
 
