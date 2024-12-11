@@ -4,21 +4,27 @@ import Image from "next/image";
 import React from "react";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { GoChevronDown } from "react-icons/go";
+import { TbMenu3 } from "react-icons/tb";
 import Car from "./Car";
 
 const NavBar = () => {
   return (
     <nav className="pt-[47px]">
       <div className="flex items-center w-full justify-between py-[25px] border-y border-y-primary">
-        <div className="w-full">
+        <div className="w-full lg:hidden block">
+          <TbMenu3 size={35} color="#1c1b29"  />
+        </div>
+
+        <div className="lg:w-full flex items-center">
           <Image
             alt="logo"
             src="/img/svg/cbkLogo.svg"
             width={110}
             height={48}
+            className="max-w-max"
           />
         </div>
-        <ul className="flex items-center gap-[60px] w-fit">
+        <ul className=" items-center gap-[60px] w-fit lg:flex hidden">
           <Links className="w-max" variant="normal">
             Home
           </Links>
@@ -36,7 +42,7 @@ const NavBar = () => {
           </Links>
         </ul>
         <div className="flex items-center gap-[35px] w-full justify-end">
-          <Links variant="externe">
+          <Links variant="externe" className="lg:block hidden">
             RESUME
             <HiOutlineExternalLink />
           </Links>

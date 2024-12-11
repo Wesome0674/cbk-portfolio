@@ -48,3 +48,26 @@
 input::placeholder {
   color: #1c1b29;
 }
+
+/* Container pour cacher les éléments qui dépassent */
+.overflow-hidden {
+  overflow: hidden; /* Cache tout ce qui déborde */
+  width: 100%; /* Adapte la largeur */
+}
+
+/* Slider avec animation */
+.animate-slider {
+  display: flex; /* Utilise Flexbox pour organiser les éléments horizontalement */
+  animation: sliderAnim 8s linear infinite; /* Animation continue sur 8 secondes */
+  gap: 14px; /* L'espace entre les éléments */
+}
+
+/* Animation du slider */
+@keyframes sliderAnim {
+  0% {
+    transform: translateX(0); /* Commence au début */
+  }
+  100% {
+    transform: translateX(-100%); /* Déplace tout le slider vers la gauche */
+  }
+}

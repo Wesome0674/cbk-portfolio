@@ -19,9 +19,9 @@ export default {
         },
       ],
       "3.5xl": [
-        "100px",
+        "clamp(50px, 5.208vw, 100px)",
         {
-          lineHeight: "125px",
+          lineHeight: "clamp(65px, 6.51vw, 125px)",
           letterSpacing: "0px",
         },
       ],
