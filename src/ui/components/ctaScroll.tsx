@@ -12,7 +12,7 @@ export const CtaScroll = ({ className, variant }: Props) => {
     <>
       {variant === "contact" && (
         <>
-          <Image className="cursor-pointer" alt="" src="/img/svg/ctaContact.svg" width={143} height={143} />
+          <Image style={{width: "clamp(100px ,7.448vw, 143px)", aspectRatio: "1/1"}} className="cursor-pointer" alt="" src="/img/svg/ctaContact.svg" width={143} height={143} />
         </>
       )}
       {variant === "top" && (

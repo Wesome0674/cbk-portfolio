@@ -17,7 +17,7 @@ const PassionSlider = () => {
     <div className="mt-[100px] max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
       <ImportantText img="/img/svg/Marker.svg">
         <Typographie variant="h4" className="font-calfine text-center">
-          MY PASSION
+          MY PASSIONS
         </Typographie>
       </ImportantText>
       {/* Wrapper qui cache le débordement */}

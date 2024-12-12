@@ -82,7 +82,7 @@ export default {
         },
       },
       animation: {
-        slider: "slider 7s linear infinite",
+        slider: "slider 10s linear infinite",
       },
       colors: {
         primary: "#1C1B29",
