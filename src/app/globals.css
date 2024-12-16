@@ -49,3 +49,9 @@ input::placeholder {
   color: #1c1b29;
 }
 
+.arrow:before {
+  content: url("/img/svg/arrow.svg");
+  position: absolute;
+  top: -75px;
+  left: -130px;
+}

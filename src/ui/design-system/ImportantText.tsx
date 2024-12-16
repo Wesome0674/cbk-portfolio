@@ -10,10 +10,10 @@ interface Props {
 export const ImportantText = ({ className, img, children }: Props) => {
   return (
     <>
-      <div className={clsx(className, "flex flex-col w-fit")}>
+      <span className={clsx(className, " w-fit")}>
         {children}
          <Image alt="" src={img} width={50} height={50} className="w-full translate-y-[-3px]" />
-      </div>
+      </span>
     </>
   );
 };
