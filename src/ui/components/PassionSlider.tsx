@@ -1,40 +1,42 @@
-import React from "react"; 
+import { PrismaClient } from "@prisma/client";
+import Image from "next/image";
 import { ImportantText } from "../design-system/ImportantText";
 import { Typographie } from "../design-system/Typographie";
-import Image from "next/image";
-import { PrismaClient } from '@prisma/client'
 
-const PassionSlider = async () => {
-  const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
-  const passionsData = await prisma.passion.findMany()
+// Fonction pour récupérer les données depuis Prisma
+async function getPassions() {
+  const passions = await prisma.passion.findMany({
+   
+    orderBy: {
+      id: "asc",
+    },
+  });
+  return passions;
+}
 
-  console.log(passionsData)
-  // Tableau dynamique des passions
-  const passions = [
-    { label: "TRAVEL", icon: "/img/svg/travel.svg" },
-    { label: "CODING", icon: "/img/svg/coding.svg" },
-    { label: "SPORTS", icon: "/img/svg/sports.svg" },
-    { label: "AVIATION", icon: "/img/svg/aviation.svg" },
-    { label: "DESIGN", icon: "/img/svg/design.svg" },
-  ];
+export default async function PassionSlider() {
+  const passions = await getPassions(); // Appel de la fonction pour récupérer les données
 
   return (
-    <div className="mt-[100px] max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
+    <div className="max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
       <ImportantText img="/img/svg/Marker.svg">
         <Typographie variant="h4" className="font-calfine text-center">
           MY PASSIONS
         </Typographie>
       </ImportantText>
-      {/* Wrapper qui cache le débordement */}
       <div className="overflow-hidden w-full">
-        {/* Slider avec animation */}
         <div className="flex items-center gap-[14px] w-max animate-slider">
-          {/* Contenu original + duplication pour continuité */}
           {[...passions, ...passions].map((passion, index) => (
             <div key={index} className="flex items-center gap-2">
-              <Typographie variant="h6">{passion.label}</Typographie>
-              <Image src={passion.icon} width={24} height={24} alt={passion.label} />
+              <Typographie className="uppercase" variant="h6">{passion.name}</Typographie>
+              <Image
+               alt=""
+                src="/img/svg/travel.svg"
+                width={24}
+                height={24}
+              />
               <div className="w-[50px] h-[4px] bg-primary"></div>
             </div>
           ))}
@@ -42,6 +44,4 @@ const PassionSlider = async () => {
       </div>
     </div>
   );
-};
-
-export default PassionSlider;
+}
