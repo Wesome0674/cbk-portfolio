@@ -2,8 +2,14 @@ import React from "react";
 import { ImportantText } from "../design-system/ImportantText";
 import { Typographie } from "../design-system/Typographie";
 import Image from "next/image";
+import { PrismaClient } from '@prisma/client'
 
-const PassionSlider = () => {
+const PassionSlider = async () => {
+  const prisma = new PrismaClient()
+
+  const passionsData = await prisma.passion.findMany()
+
+  console.log(passionsData)
   // Tableau dynamique des passions
   const passions = [
     { label: "TRAVEL", icon: "/img/svg/travel.svg" },
