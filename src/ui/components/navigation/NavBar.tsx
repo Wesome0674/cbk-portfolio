@@ -9,7 +9,7 @@ import Car from "./Car";
 
 const NavBar = () => {
   return (
-    <nav className="pt-[47px]">
+    <nav className="pt-[47px] fixed z-50">
       <div className="flex items-center w-full justify-between py-[25px] border-y border-y-primary">
         <div className="w-full lg:hidden block">
           <TbMenu3 size={35} color="#1c1b29"  />

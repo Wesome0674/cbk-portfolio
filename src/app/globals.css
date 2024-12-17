@@ -45,7 +45,7 @@
   filter: drop-shadow(1px 1px 0px #1c1b29);
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: #1c1b29;
 }
 

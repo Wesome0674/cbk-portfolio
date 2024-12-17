@@ -16,16 +16,31 @@ export const Inputs = ({
 }: Props) => {
   return (
     <>
-      <div className="flex items-center gap-[10px] px-[17px] py-[13px] border-2 border-primary text-medium-effect bg-secondary rounded-[10px]">
-        <Image alt="" width={18} height={18} src={icon} />
-        <input 
-          placeholder={placeHolder}
-          type={typeOfInput}
-          className={clsx(
-            className,
-            "outline-none bg-transparent text-[16px] text-primary"
+      <div
+        className={clsx(
+          className,
+          "px-[17px] w-full py-[13px] border-2 border-primary text-medium-effect bg-secondary rounded-[10px]"
+        )}
+      >
+        <div className="flex w-full h-full items-start gap-[10px]">
+          <Image alt="" width={18} height={18} src={icon} />
+          {typeOfInput === "textarea" ? (
+            <textarea
+              placeholder={placeHolder}
+              className={clsx(
+                "outline-none resize-none bg-transparent text-[16px] h-full w-full text-primary"
+              )}
+            />
+          ) : (
+            <input
+              placeholder={placeHolder}
+              type={typeOfInput}
+              className={clsx(
+                "outline-none bg-transparent text-[16px] h-full w-full text-primary"
+              )}
+            />
           )}
-        />
+        </div>
       </div>
     </>
   );
