@@ -7,7 +7,7 @@ import { ImportantText } from "../design-system/ImportantText";
 
 const AboutMe = () => {
   return (
-    <div className="space-y-[50px] max-w-fit mx-auto ">
+    <div className="space-y-[50px] translate-x-[75px] max-w-fit mx-auto ">
       <div className="flex">
         <div className="space-y-[29px] z-10">
           <Typographie
@@ -57,9 +57,9 @@ const AboutMe = () => {
           </Links>
         </div>
 
-        <Typographie className="uppercase -translate-x-[150px] leading-[30px] max-w-[800px] relative arrow">
-          For the past
-          <ImportantText img="/img/png/Line-Marker.png" className="inline-block">
+        <Typographie className="uppercase -translate-x-[150px] leading-[30px] max-w-[800px] relative inline-block arrow">
+          For the past&nbsp;
+          <ImportantText img="/img/png/Line-Marker.png">
             <Typographie weight="bold" component="span">two years</Typographie>
           </ImportantText>
           , I have immersed myself in the world of coding and interface design,

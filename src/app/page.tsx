@@ -5,7 +5,7 @@ import NavBar from "@/ui/components/navigation/NavBar";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="relative">
       <NavBar />
       <Header />
       <AboutMe />

@@ -5,19 +5,24 @@ import { Typographie } from "../design-system/Typographie";
 
 const prisma = new PrismaClient();
 
-// Fonction pour récupérer les données depuis Prisma
+// Cache pour stocker les passions
+let cachedPassions: any[] | null = null;
+
+// Fonction pour récupérer les données avec cache
 async function getPassions() {
-  const passions = await prisma.passion.findMany({
-   
-    orderBy: {
-      id: "asc",
-    },
-  });
-  return passions;
+  if (!cachedPassions) {
+    console.log("Fetching data from database...");
+    cachedPassions = await prisma.passion.findMany({
+      orderBy: { id: "asc" },
+    });
+  } else {
+    console.log("Using cached data...");
+  }
+  return cachedPassions;
 }
 
 export default async function PassionSlider() {
-  const passions = await getPassions(); // Appel de la fonction pour récupérer les données
+  const passions = await getPassions(); // Utilise le cache si possible
 
   return (
     <div className="max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
@@ -30,9 +35,11 @@ export default async function PassionSlider() {
         <div className="flex items-center gap-[14px] w-max animate-slider">
           {[...passions, ...passions].map((passion, index) => (
             <div key={index} className="flex items-center gap-2">
-              <Typographie className="uppercase" variant="h6">{passion.name}</Typographie>
+              <Typographie className="uppercase" variant="h6">
+                {passion.name}
+              </Typographie>
               <Image
-               alt=""
+                alt=""
                 src="/img/svg/travel.svg"
                 width={24}
                 height={24}
