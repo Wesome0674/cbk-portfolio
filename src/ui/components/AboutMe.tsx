@@ -79,7 +79,7 @@ const AboutMe = () => {
             possibilities of the digital world. I am currently a student at{" "}
             <ImportantText img="/img/png/Line-Marker.png">
               <Typographie weight="bold" component="span">
-                L'Ecole By CCI Haute-Savoie,
+                L&apos;Ecole By CCI Haute-Savoie,
               </Typographie>
             </ImportantText>
             studying in the digital field, where I continue to develop my skills

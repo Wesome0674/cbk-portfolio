@@ -40,7 +40,7 @@ const Form = () => {
               <Links variant="externe" className="inline-block">
                 Axis Studio
               </Links>
-              , to turn your vision into reality."
+              , to turn your vision into reality.
             </Typographie>
             <Image
               alt=""
