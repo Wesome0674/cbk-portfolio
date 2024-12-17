@@ -14,8 +14,8 @@ const Header = () => {
           alt=""
           className="h-[43px] w-[43px]"
           src="/img/png/see.png"
-          width={100}
-          height={100}
+          width={500}
+          height={500}
         />
       </div>
       <div>

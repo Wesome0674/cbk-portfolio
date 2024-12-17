@@ -49,7 +49,7 @@ export const Button = ({
         className={clsx(variantStyles, sizeStyles, iconSize, className)}
       >
         <>
-          <div className={clsx(icon && "flex items-center gap-2")}>
+          <div className={clsx(icon && "flex items-center gap-2 justify-center")}>
             {icon && iconPosition === "left" && <icon.icon size={iconSize} />}
             {children}
             {icon && iconPosition === "right" && <icon.icon size={iconSize} />}

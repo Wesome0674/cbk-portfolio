@@ -45,7 +45,8 @@
   filter: drop-shadow(1px 1px 0px #1c1b29);
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: #1c1b29;
 }
 
@@ -54,4 +55,31 @@ input::placeholder, textarea::placeholder {
   position: absolute;
   top: -75px;
   left: -130px;
+}
+
+.handwrite:after {
+  content: url("/img/png/handwrite.png");
+  height: 137px;
+  width: 206px;
+  position: absolute;
+  right: -235px;
+  top: 114px;
+}
+
+.handshow:before {
+  content: url("/img/png/handshow.png");
+  height: 195px;
+  width: 130px;
+  position: absolute;
+  left: -120px;
+  top: 130px;
+}
+
+.handshow:after {
+  content: url("/img/png/postcard.png");
+  height: 132px;
+  width: 132px;
+  position: absolute;
+  right: -170px;
+  top: 131px;
 }
