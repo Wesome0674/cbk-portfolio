@@ -28,7 +28,7 @@ export default {
       "3xl": [
         "80px",
         {
-          lineHeight: "88px",
+          
         },
       ],
       "2xl": [

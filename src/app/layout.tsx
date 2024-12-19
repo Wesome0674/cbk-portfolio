@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
-import { CtaScroll } from "@/ui/components/ctaScroll";
+
 
 export const metadata: Metadata = {
   title: "CBK-portfolio",
@@ -27,9 +27,6 @@ export default function RootLayout({
           className="fixed h-full w-full z-[-1] object-cover"
         />
         <div className="max-w-[1760px] mx-auto px-4">{children}</div>
-        <div className="fixed bottom-4 right-4">
-          <CtaScroll variant="contact" />
-        </div>
       </body>
     </html>
   );

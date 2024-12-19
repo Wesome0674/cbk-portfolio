@@ -1,7 +1,26 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Car = () => {
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      setScrollPercentage(scrollPercent);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="w-full mt-[25px] flex items-end">
       <Image alt="" width={26} height={35} src="/img/svg/flag.svg" />
@@ -20,7 +39,7 @@ const Car = () => {
           src="/img/svg/car.svg"
           className="absolute top-[-30px]"
           style={{
-            left: "2%"
+            left: `${Math.min(scrollPercentage, 95)}%`,
           }}
         />
       </div>

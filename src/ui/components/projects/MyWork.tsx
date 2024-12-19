@@ -1,9 +1,9 @@
 import { Button } from "@/ui/design-system/Button";
 import { ImportantText } from "@/ui/design-system/ImportantText";
-import { Links } from "@/ui/design-system/Links";
 import { Typographie } from "@/ui/design-system/Typographie";
 import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const prisma = new PrismaClient();
@@ -18,12 +18,17 @@ async function getProjects() {
   return projects;
 }
 
+interface Project {
+  id: number;
+  name: string;
+  description: string;
+}
+
 const MyWork = async () => {
   const projects = await getProjects(); // Appel de la fonction pour récupérer les données
-  console.log(projects)
   return (
-    <div className="min-h-screen w-full mt-[305px]">
-      <div>
+    <div className="min-h-screen w-full mt-[305px] p-4">
+      <div className="mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
         <div className="flex flex-col items-center gap-[30px] ">
           <ImportantText img="/img/png/Wave-Marker.png">
             <Typographie
@@ -48,44 +53,53 @@ const MyWork = async () => {
             </Typographie>
           </Typographie>
         </div>
-        <div className="mt-[75px]">
-          <div className="space-y-[30px] w-full">
-            <hr className="w-full border border-primary" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-[75px]">
-                <Image
-                  src="/img/png/Project1.png"
-                  alt=""
-                  width={296}
-                  height={237}
-                />
-                <div className="space-y-[15px]">
-                  <Typographie
-                    className="font-calfine"
-                    variant="h3"
-                    theme="tercery"
-                    textEffect="large"
-                  >
-                    EnergieX
-                  </Typographie>
-                  <Typographie className="max-w-[420px]">
-                    Lorem ipsum dolor sit amet consectetur. Porttitor curabitur
-                    iaculis.
-                  </Typographie>
-                  <Button>SEE MORE DETAILS</Button>
+        <div className="w-full">
+          {projects.map((project: Project) => (
+            <div key={project.id} className="space-y-[30px] w-full mb-[30px]">
+              <hr className="w-full border border-primary" />
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[75px]">
+                  <Image
+                    src="/img/png/Project1.png"
+                    alt=""
+                    width={296}
+                    height={237}
+                  />
+                  <div className="flex flex-col gap-[15px]">
+                    <Typographie
+                      className="font-calfine"
+                      variant="h3"
+                      theme="tercery"
+                      textEffect="large"
+                    >
+                      {project.name}
+                    </Typographie>
+                    <Typographie className="max-w-[420px]">
+                      {project.description}
+                    </Typographie>
+                    <Link href={`/selectedWork/${project.id}`}>
+                      <Button variant="outline">SEE MORE DETAILS</Button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
 
-              <Typographie
-                weight="medium"
-                variant="h5"
-                theme="secondary"
-                textEffect="large"
-              >
-                01
-              </Typographie>
+                <Typographie
+                  weight="medium"
+                  variant="h5"
+                  theme="secondary"
+                  textEffect="large"
+                >
+                  {projects.indexOf(project) + 1 < 10
+                    ? `0${projects.indexOf(project) + 1}`
+                    : projects.indexOf(project) + 1}
+                </Typographie>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+        <div className="flex gap-[10px]">
+          <Typographie variant="h6" className="underline">More Coming Soon</Typographie>
+          <Image src="/img/svg/smiley.svg" alt="" width={24} height={24} />
         </div>
       </div>
     </div>
