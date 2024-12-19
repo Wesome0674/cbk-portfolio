@@ -37,7 +37,7 @@ const Form = () => {
           <div className="w-fit relative">
             <Typographie className="max-w-[434px] text-center">
               “Contact me or my agency,{" "}
-              <Links variant="externe" className="inline-block">
+              <Links link="https://frontend-axis.vercel.app" variant="externe" className="inline-block">
                 Axis Studio
               </Links>
               , to turn your vision into reality.

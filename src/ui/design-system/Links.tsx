@@ -4,6 +4,7 @@ import { CgArrowTopRight } from "react-icons/cg";
 
 interface Props {
   variant?: "normal" | "underline" | "footer" | "externe";
+  link: string;
   icon?: { icon: React.ElementType };
   iconPosition?: "left" | "right";
   className?: string;
@@ -12,6 +13,7 @@ interface Props {
 
 export const Links = ({
   className,
+  link,
   variant = "normal",
   iconPosition = "right",
   children,
@@ -32,14 +34,14 @@ export const Links = ({
         " text-primary text-secondary  font-calfine text-[40px] text-large-effect";
       break;
     case "externe":
-      variantStyles =
-        " text-primary text-base font-normal underline";
+      variantStyles = " text-primary text-base font-normal underline";
       break;
   }
 
   return (
     <>
-      <Link href="#"
+      <Link
+        href={link}
         type="link"
         className={clsx(variantStyles, iconSize, className)}
       >

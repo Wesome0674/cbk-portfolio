@@ -16,3 +16,42 @@ model Passion {
   icon        String       
 }
 
+model Project {
+  id             Int       @id @default(autoincrement())
+  name           String
+  description    String
+  duration       Int
+  processDetails String
+  liveSiteUrl    String
+  githubRepoUrl  String
+  technologies   TechnologyProject[] 
+  roles          RoleProject[]
+}
+
+model Technology {
+  id        Int       @id @default(autoincrement())
+  name      String
+  projects  TechnologyProject[]
+}
+
+model Role {
+  id       Int       @id @default(autoincrement())
+  name     String
+  projects RoleProject[]
+}
+
+model TechnologyProject {
+  id          Int      @id @default(autoincrement())
+  projectId   Int
+  technologyId Int
+  Project     Project  @relation(fields: [projectId], references: [id])
+  Technology  Technology @relation(fields: [technologyId], references: [id])
+}
+
+model RoleProject {
+  id         Int       @id @default(autoincrement())
+  projectId  Int
+  roleId     Int
+  Project    Project   @relation(fields: [projectId], references: [id])
+  Role       Role      @relation(fields: [roleId], references: [id])
+}

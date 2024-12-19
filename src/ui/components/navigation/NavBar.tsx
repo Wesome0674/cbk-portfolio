@@ -12,7 +12,7 @@ const NavBar = () => {
     <nav className="pt-[47px] fixed z-50">
       <div className="flex items-center w-full justify-between py-[25px] border-y border-y-primary">
         <div className="w-full lg:hidden block">
-          <TbMenu3 size={35} color="#1c1b29"  />
+          <TbMenu3 size={35} color="#1c1b29" />
         </div>
 
         <div className="lg:w-full flex items-center">
@@ -25,24 +25,24 @@ const NavBar = () => {
           />
         </div>
         <ul className=" items-center gap-[60px] w-fit lg:flex hidden">
-          <Links className="w-max" variant="normal">
+          <Links link="#" className="w-max" variant="normal">
             Home
           </Links>
-          <Links className="w-max" variant="normal">
+          <Links link="#" className="w-max" variant="normal">
             About me
           </Links>
-          <Links className="w-max" variant="normal">
+          <Links link="#" className="w-max" variant="normal">
             My skills
           </Links>
-          <Links className="w-max" variant="normal">
+          <Links link="#" className="w-max" variant="normal">
             My work
           </Links>
-          <Links className="w-max" variant="normal">
+          <Links link="#" className="w-max" variant="normal">
             contact
           </Links>
         </ul>
         <div className="flex items-center gap-[35px] w-full justify-end">
-          <Links variant="externe" className="lg:block hidden">
+          <Links link="#" variant="externe" className="lg:block hidden">
             RESUME
             <HiOutlineExternalLink />
           </Links>

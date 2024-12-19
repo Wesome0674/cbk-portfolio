@@ -51,13 +51,13 @@ const AboutMe = () => {
               </ImportantText>
               <div className="w-full h-[1px] bg-primary mt-[15px]"></div>
             </div>
-            <Links className="w-full" variant="underline">
+            <Links link="#" className="w-full" variant="underline">
               Instagram
             </Links>
-            <Links className="w-full" variant="underline">
+            <Links link="#" className="w-full" variant="underline">
               Github
             </Links>
-            <Links className="w-full" variant="underline">
+            <Links link="#" className="w-full" variant="underline">
               Linkedin
             </Links>
           </div>
