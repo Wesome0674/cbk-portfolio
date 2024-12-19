@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <LenisWrapper>
       <div className="relative">
-       {/*  <Loader /> */}
         <Header />
         <AboutMe />
         <MyWork />
