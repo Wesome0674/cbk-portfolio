@@ -1,7 +1,6 @@
 import React from "react";
 import { PrismaClient } from "@prisma/client";
 import { Typographie } from "@/ui/design-system/Typographie";
-import Loader from "@/ui/components/Loader";
 
 const prisma = new PrismaClient();
 
