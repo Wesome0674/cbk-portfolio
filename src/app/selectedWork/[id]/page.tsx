@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { PrismaClient } from "@prisma/client";
 import { Typographie } from "@/ui/design-system/Typographie";
 import Loader from "@/ui/components/Loader";
@@ -9,10 +9,21 @@ interface Params {
   id: string;
 }
 
-const ProjectDetails = async ({ id }: { id: string }) => {
+interface Project {
+  id: number;
+  name: string;
+  // Add other properties as needed
+}
+
+async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
-    where: { id: parseInt(id) },
+    where: { id: parseInt(id, 10) },
   });
+  return project;
+}
+
+const Page = async ({ params }: { params: Params }) => {
+  const project = await fetchProject(params.id);
 
   if (!project) {
     return (
@@ -41,16 +52,6 @@ const ProjectDetails = async ({ id }: { id: string }) => {
         <hr className="w-full border border-primary" />
       </div>
     </div>
-  );
-};
-
-const Page = ({ params }: { params: Params }) => {
-  const { id } = params;
-
-  return (
-    <Suspense fallback={<Loader />}>
-      <ProjectDetails id={id} />
-    </Suspense>
   );
 };
 

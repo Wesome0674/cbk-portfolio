@@ -22,6 +22,10 @@ interface Project {
   id: number;
   name: string;
   description: string;
+  duration: number;
+  processDetails: string;
+  liveSiteUrl: string;
+  githubRepoUrl: string;
 }
 
 const MyWork = async () => {
