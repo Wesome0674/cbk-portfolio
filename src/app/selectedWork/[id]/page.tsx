@@ -1,13 +1,12 @@
 import React from "react";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/prisma";
 import { Typographie } from "@/ui/design-system/Typographie";
-
-const prisma = new PrismaClient();
 
 interface Params {
   id: string;
 }
 
+// Fonction pour récupérer le projet
 async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
     where: { id: parseInt(id, 10) },
@@ -15,6 +14,7 @@ async function fetchProject(id: string) {
   return project;
 }
 
+// Page pour afficher les détails du projet
 const Page = async ({ params }: { params: Params }) => {
   const project = await fetchProject(params.id);
 
