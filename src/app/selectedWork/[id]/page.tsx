@@ -8,12 +8,6 @@ interface Params {
   id: string;
 }
 
-interface Project {
-  id: number;
-  name: string;
-  // Add other properties as needed
-}
-
 async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
     where: { id: parseInt(id, 10) },
