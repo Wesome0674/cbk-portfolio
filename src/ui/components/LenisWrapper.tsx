@@ -1,4 +1,4 @@
-'use client'; // Marque ce composant comme exécuté côté client
+/* 'use client'; // Marque ce composant comme exécuté côté client
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 
@@ -23,3 +23,4 @@ export default function LenisWrapper({ children }: { children: React.ReactNode }
 
   return <>{children}</>; // Render les enfants sans wrapper supplémentaire
 }
+ */
