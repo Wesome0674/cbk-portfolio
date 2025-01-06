@@ -26,7 +26,7 @@ export default function RootLayout({
           alt=""
           className="fixed h-full w-full z-[-1] object-cover"
         />
-        <div className="max-w-[1760px] mx-auto px-4">{children}</div>
+        <div className="max-w-[1760px] mx-auto">{children}</div>
       </body>
     </html>
   );
