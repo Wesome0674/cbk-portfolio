@@ -11,7 +11,7 @@ import NavBar from "@/ui/components/navigation/NavBar";
 const page = () => {
   return (
     <>
-     <NavBar/>
+      <NavBar />
       <main className="p-4 w-full min-h-screen space-y-6 grid place-content-center">
         <Typographie
           textEffect="large"
@@ -75,14 +75,16 @@ const page = () => {
             <fieldset className="p-4 border-2 border-primary w-fit">
               <legend className="ml-2">Links</legend>
               <div className="flex gap-3 items-center">
-                <Links className="w-[150px]" variant="underline">
+                <Links link="#" className="w-[150px]" variant="underline">
                   Instagram
                 </Links>
-                <Links>Link</Links>
-                <Links variant="externe">
+                <Links link="#">Link</Links>
+                <Links link="#" variant="externe">
                   Link <CgArrowTopRight />
                 </Links>
-                <Links variant="footer">Link</Links>
+                <Links link="#" variant="footer">
+                  Link
+                </Links>
               </div>
             </fieldset>
             <fieldset className="p-4 border-2 border-primary w-fit">
