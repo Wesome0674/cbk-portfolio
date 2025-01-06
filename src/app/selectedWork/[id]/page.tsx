@@ -15,8 +15,8 @@ async function fetchProject(id: string) {
 }
 
 // Page pour afficher les détails du projet
-const Page = async ({ params }: { params: Params }) => {
-  const project = await fetchProject(params.id);
+const Page = async ({params}: {params: Promise<{ id: string }>}) => {
+  const project = await fetchProject((await params).id);
 
   if (!project) {
     return (
