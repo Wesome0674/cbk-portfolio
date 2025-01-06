@@ -2,10 +2,6 @@ import React from "react";
 import prisma from "@/prisma";
 import { Typographie } from "@/ui/design-system/Typographie";
 
-interface Params {
-  id: string;
-}
-
 // Fonction pour récupérer le projet
 async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
