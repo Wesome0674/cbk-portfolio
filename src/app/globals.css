@@ -89,3 +89,7 @@ textarea::placeholder {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.container {
+  max-width: calc(100% - 80px);
+}

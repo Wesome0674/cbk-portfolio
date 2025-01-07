@@ -26,9 +26,9 @@ export default {
         },
       ],
       "3xl": [
-        "80px",
+        " clamp(40px, 4.167vw, 80px)",
         {
-          
+          lineHeight: "clamp(50px, 5.208vw, 100px)",
         },
       ],
       "2xl": [
@@ -40,7 +40,7 @@ export default {
       xl: [
         "40px",
         {
-          lineHeight: "44px",
+          
         },
       ],
       md: [
