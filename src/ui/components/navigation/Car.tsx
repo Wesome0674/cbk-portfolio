@@ -25,13 +25,9 @@ const Car = () => {
     <div className="w-full mt-[25px] flex items-end">
       <Image alt="" width={26} height={35} src="/img/svg/flag.svg" />
       <div className="w-full relative ">
-        <Image
-          alt=""
-          width={1920}
-          height={2}
-          src="/img/svg/Line.svg"
-          className="w-full h-2"
-        />
+        <div className="line w-full h-[1px]">
+
+        </div>
         <Image
           alt=""
           width={103}

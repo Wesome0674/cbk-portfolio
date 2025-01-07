@@ -8,17 +8,8 @@ const Header = () => {
   return (
     <header className="w-full min-h-screen relative">
       <NavBar />
-      <div className=" flex flex-col items-center gap-[5px] absolute bottom-[22px] w-max left-1/2 transform -translate-x-1/2 ">
-        <Typographie variant="h6">Explore More</Typographie>
-        <Image
-          alt=""
-          className="h-[43px] w-[43px]"
-          src="/img/png/see.png"
-          width={500}
-          height={500}
-        />
-      </div>
-      <div>
+     
+      <div className="space-y-[200px]">
         <div className="flex pt-[305px] flex-col  w-fit mx-auto items-center gap-[30px]">
           <div className="flex flex-col items-center gap-[10px]">
             <Typographie
@@ -66,6 +57,16 @@ const Header = () => {
             <Button variant="outline">MY SKILLS</Button>
           </div>
         </div>
+        <div className=" flex flex-col items-center gap-[5px] ">
+        <Typographie variant="h6">Explore More</Typographie>
+        <Image
+          alt=""
+          className="h-[43px] w-[43px]"
+          src="/img/png/see.png"
+          width={500}
+          height={500}
+        />
+      </div>
       </div>
     </header>
   );
