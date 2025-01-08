@@ -1,6 +1,6 @@
 
 /* import { PrismaClient } from "@prisma/client"; */
-import Image from "next/image";
+/* import Image from "next/image"; */
 import { ImportantText } from "../design-system/ImportantText";
 import { Typographie } from "../design-system/Typographie";
 
