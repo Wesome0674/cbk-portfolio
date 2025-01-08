@@ -1,24 +1,23 @@
-import { Button } from "@/ui/design-system/Button";
+/* import { Button } from "@/ui/design-system/Button";
 import { ImportantText } from "@/ui/design-system/ImportantText";
-import { Typographie } from "@/ui/design-system/Typographie";
-import { PrismaClient } from "@prisma/client";
-import Image from "next/image";
-import Link from "next/link";
+import { Typographie } from "@/ui/design-system/Typographie"; */
+/* import { PrismaClient } from "@prisma/client"; */
+/* import Image from "next/image";
+import Link from "next/link"; */
 import React from "react";
 
-const prisma = new PrismaClient();
+/* const prisma = new PrismaClient(); */
 
-// Fonction pour récupérer les données depuis Prisma
-async function getProjects() {
+/* async function getProjects() {
   const projects = await prisma.project.findMany({
     orderBy: {
       id: "asc",
     },
   });
   return projects;
-}
+} */
 
-interface Project {
+/* interface Project {
   id: number;
   name: string;
   description: string;
@@ -26,13 +25,13 @@ interface Project {
   processDetails: string;
   liveSiteUrl: string;
   githubRepoUrl: string;
-}
+} */
 
 const MyWork = async () => {
-  const projects = await getProjects(); // Appel de la fonction pour récupérer les données
+/*   const projects = await getProjects();  */
   return (
-    <div className="min-h-screen w-full mt-[305px] p-4">
-      <div className="mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
+    <div className="min-h-screen w-full p-4">
+{/*       <div className="mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
         <div className="flex flex-col items-center gap-[30px] ">
           <ImportantText img="/img/png/Wave-Marker.png">
             <Typographie
@@ -105,7 +104,7 @@ const MyWork = async () => {
           <Typographie variant="h6" className="underline">More Coming Soon</Typographie>
           <Image src="/img/svg/smiley.svg" alt="" width={24} height={24} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

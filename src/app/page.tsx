@@ -4,6 +4,7 @@ import Header from "@/ui/components/Header";
 /* import LenisWrapper from "@/ui/components/LenisWrapper"; */
 import MyWork from "@/ui/components/projects/MyWork";
 import { CtaScroll } from "@/ui/components/ctaScroll";
+import MySkills from "@/ui/components/MySkills";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="relative">
         <Header />
         <AboutMe />
+        <MySkills />
         <MyWork />
         <Form />
          <div className="fixed bottom-4 right-4">

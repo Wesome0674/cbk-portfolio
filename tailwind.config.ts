@@ -5,7 +5,7 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -32,17 +32,12 @@ export default {
         },
       ],
       "2xl": [
-        "60px",
+        "clamp(30px ,3.125vw, 60px)",
         {
           lineHeight: "71,8px",
         },
       ],
-      xl: [
-        "40px",
-        {
-          
-        },
-      ],
+      xl: ["40px", {}],
       md: [
         "30px",
         {
@@ -90,8 +85,8 @@ export default {
         tercery: "#F2FF50",
       },
       fontFamily: {
-        'calfine': ['"calfine"'],
-        'druk': ['"druk"'],
+        calfine: ['"calfine"'],
+        druk: ['"druk"'],
       },
     },
   },

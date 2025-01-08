@@ -7,7 +7,7 @@ import { ImportantText } from "../design-system/ImportantText";
 
 const AboutMe = () => {
   return (
-    <div className="w-full min-h-screen mt-[305px]">
+    <div className="w-full min-h-screen">
       <div className="space-y-[50px] translate-x-[75px] max-w-fit mx-auto ">
         <div className="flex">
           <div className="space-y-[29px] z-10">

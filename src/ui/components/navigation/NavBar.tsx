@@ -42,10 +42,12 @@ const NavBar = () => {
           </Links>
         </ul>
         <div className="flex items-center gap-[35px] w-full justify-end">
-          <Links link="#" variant="externe" className="lg:block hidden">
-            RESUME
-            <HiOutlineExternalLink />
-          </Links>
+          <div className="flex items-center gap-2">
+            <Links link="#" variant="externe" className="lg:block hidden">
+              RESUME
+            </Links>
+            <HiOutlineExternalLink size={18} />
+          </div>
           <div className="flex items-center gap-2">
             <Image alt="logo" src="/img/svg/GB.svg" width={32} height={24} />
             <div className="flex items-center gap-[5px] cursor-pointer">

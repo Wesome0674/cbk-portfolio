@@ -48,6 +48,7 @@ export const Links = ({
         <>
           <div
             className={clsx(
+              "link",
               variant === "underline" && "flex items-center justify-between",
               variant === "externe" && "flex items-center gap-[8px]"
             )}
@@ -55,7 +56,12 @@ export const Links = ({
             {variant === "underline" && iconPosition === "left" && (
               <CgArrowTopRight size={iconSize} />
             )}
-            {children}
+            <span className="mask">
+              <div className="link-container">
+                <span className="link-title1 title">{children}</span>
+                <span className="link-title2 title">{children}</span>
+              </div>
+            </span>
             {variant === "underline" && iconPosition === "right" && (
               <CgArrowTopRight size={iconSize} />
             )}
