@@ -8,17 +8,15 @@ import MySkills from "@/ui/components/MySkills";
 
 export default function Home() {
   return (
-   /*  <LenisWrapper> */
-      <div className="relative">
-        <Header />
-        <AboutMe />
-        <MySkills />
-        <MyWork />
-        <Form />
-         <div className="fixed bottom-4 right-4">
-          <CtaScroll variant="contact" />
-        </div>
+    <div className="relative">
+      <Header />
+      <AboutMe />
+      <MySkills />
+      <MyWork />
+      <Form />
+      <div className="fixed bottom-4 right-4">
+        <CtaScroll variant="contact" />
       </div>
-    /* </LenisWrapper> */
+    </div>
   );
 }

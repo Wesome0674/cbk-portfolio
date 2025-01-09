@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const MySkills = () => {
   return (
-    <div id="myskills" className="w-full min-h-screen space-y-[140px] skills-container mx-auto">
+    <div id="myskills" className="w-full min-h-screen space-y-[140px] skills-container mx-auto flex items-center justify-center flex-col">
       <div className="flex items-center justify-between w-full gap-2">
         <div className="space-y-[6px] max-w-[419px]">
           <Typographie>LYCEE LOUIS LACHENAL</Typographie>

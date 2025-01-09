@@ -30,8 +30,8 @@ interface Project {
 const MyWork = async () => {
   const projects = await getProjects();
   return (
-    <div id="mywork" className="min-h-screen w-full p-4">
-      <div className="mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
+    <div id="mywork" className=" w-full min-h-screen flex items-center justify-center">
+      <div className="w-full mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
         <div className="flex flex-col items-center gap-[30px] ">
           <ImportantText img="/img/png/Wave-Marker.png">
             <Typographie
