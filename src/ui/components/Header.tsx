@@ -3,12 +3,13 @@ import { Typographie } from "../design-system/Typographie";
 import { Button } from "../design-system/Button";
 import Image from "next/image";
 import NavBar from "./navigation/NavBar";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="w-full min-h-screen relative">
+    <header id="header" className="w-full min-h-screen relative">
       <NavBar />
-     
+
       <div className="space-y-[200px]">
         <div className="flex pt-[305px] flex-col  w-fit mx-auto items-center gap-[30px]">
           <div className="flex flex-col items-center gap-[10px]">
@@ -53,20 +54,24 @@ const Header = () => {
             with me to discover my personal world and what i do ?
           </Typographie>
           <div className="flex items-center gap-[20px]">
-            <Button>MY WORK</Button>
-            <Button variant="outline">MY SKILLS</Button>
+            <Link href="#mywork">
+              <Button>MY WORK</Button>
+            </Link>
+            <Link href="#myskills">
+              <Button variant="outline">MY SKILLS</Button>
+            </Link>
           </div>
         </div>
         <div className=" flex flex-col items-center gap-[5px] ">
-        <Typographie variant="h6">Explore More</Typographie>
-        <Image
-          alt=""
-          className="h-[43px] w-[43px]"
-          src="/img/png/see.png"
-          width={500}
-          height={500}
-        />
-      </div>
+          <Typographie variant="h6">Explore More</Typographie>
+          <Image
+            alt=""
+            className="h-[43px] w-[43px]"
+            src="/img/png/see.png"
+            width={500}
+            height={500}
+          />
+        </div>
       </div>
     </header>
   );

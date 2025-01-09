@@ -1,23 +1,23 @@
-/* import { Button } from "@/ui/design-system/Button";
+import { Button } from "@/ui/design-system/Button";
 import { ImportantText } from "@/ui/design-system/ImportantText";
-import { Typographie } from "@/ui/design-system/Typographie"; */
-/* import { PrismaClient } from "@prisma/client"; */
-/* import Image from "next/image";
-import Link from "next/link"; */
+import { Typographie } from "@/ui/design-system/Typographie";
+import { PrismaClient } from "@prisma/client";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-/* const prisma = new PrismaClient(); */
+const prisma = new PrismaClient();
 
-/* async function getProjects() {
+async function getProjects() {
   const projects = await prisma.project.findMany({
     orderBy: {
       id: "asc",
     },
   });
   return projects;
-} */
+}
 
-/* interface Project {
+interface Project {
   id: number;
   name: string;
   description: string;
@@ -25,13 +25,13 @@ import React from "react";
   processDetails: string;
   liveSiteUrl: string;
   githubRepoUrl: string;
-} */
+}
 
 const MyWork = async () => {
-/*   const projects = await getProjects();  */
+  const projects = await getProjects();
   return (
-    <div className="min-h-screen w-full p-4">
-{/*       <div className="mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
+    <div id="mywork" className="min-h-screen w-full p-4">
+      <div className="mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
         <div className="flex flex-col items-center gap-[30px] ">
           <ImportantText img="/img/png/Wave-Marker.png">
             <Typographie
@@ -101,10 +101,12 @@ const MyWork = async () => {
           ))}
         </div>
         <div className="flex gap-[10px]">
-          <Typographie variant="h6" className="underline">More Coming Soon</Typographie>
+          <Typographie variant="h6" className="underline">
+            More Coming Soon
+          </Typographie>
           <Image src="/img/svg/smiley.svg" alt="" width={24} height={24} />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

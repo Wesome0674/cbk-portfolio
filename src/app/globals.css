@@ -102,6 +102,10 @@ textarea::placeholder {
   max-width: calc(100% - 4.167vw);
 }
 
+.skills-container {
+  max-width: 1352px;
+}
+
 .link {
   height: 30px;
   align-items: center;

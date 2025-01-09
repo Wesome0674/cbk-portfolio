@@ -9,7 +9,7 @@ import { IoIosSend } from "react-icons/io";
 
 const Form = () => {
   return (
-    <div className="w-full min-h-screen ">
+    <div id="form" className="w-full min-h-screen ">
       <div className="mx-auto w-fit space-y-[40px]">
         <div className="flex flex-col items-center gap-[30px] relative handshow">
           <ImportantText img="/img/png/Wave-Marker.png">

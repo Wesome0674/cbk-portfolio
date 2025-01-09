@@ -6,6 +6,7 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import { GoChevronDown } from "react-icons/go";
 import { TbMenu3 } from "react-icons/tb";
 import Car from "./Car";
+import Link from "next/link";
 
 const NavBar = () => {
   return (
@@ -15,7 +16,7 @@ const NavBar = () => {
           <TbMenu3 size={35} color="#1c1b29" />
         </div>
 
-        <div className="lg:w-full flex items-center">
+        <Link href="/" className="lg:w-full flex items-center">
           <Image
             alt="logo"
             src="/img/svg/cbkLogo.svg"
@@ -23,21 +24,21 @@ const NavBar = () => {
             height={48}
             className="max-w-max"
           />
-        </div>
+        </Link>
         <ul className=" items-center gap-[60px] w-fit lg:flex hidden">
-          <Links link="#" className="w-max" variant="normal">
+          <Links link="#header" className="w-max" variant="normal">
             Home
           </Links>
-          <Links link="#" className="w-max" variant="normal">
+          <Links link="#aboutme" className="w-max" variant="normal">
             About me
           </Links>
-          <Links link="#" className="w-max" variant="normal">
+          <Links link="#myskills" className="w-max" variant="normal">
             My skills
           </Links>
-          <Links link="#" className="w-max" variant="normal">
+          <Links link="#mywork" className="w-max" variant="normal">
             My work
           </Links>
-          <Links link="#" className="w-max" variant="normal">
+          <Links link="#form" className="w-max" variant="normal">
             contact
           </Links>
         </ul>

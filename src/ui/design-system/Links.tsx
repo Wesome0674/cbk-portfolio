@@ -40,37 +40,46 @@ export const Links = ({
 
   return (
     <>
-      <Link
-        href={link}
-        type="link"
-        className={clsx(variantStyles, iconSize, className)}
-      >
-        <>
-          <div
-            className={clsx(
-              "link",
-              variant === "underline" && "flex items-center justify-between",
-              variant === "externe" && "flex items-center gap-[8px]"
+      {variant !== "footer" ? (
+        <Link
+          href={link}
+          type="link"
+          className={clsx(variantStyles, iconSize, className)}
+        >
+          <>
+            <div
+              className={clsx(
+                "link",
+                variant === "underline" && "flex items-center justify-between"
+              )}
+            >
+              {variant === "underline" && iconPosition === "left" && (
+                <CgArrowTopRight size={iconSize} />
+              )}
+              <span className="mask">
+                <div className="link-container">
+                  <span className="link-title1 title">{children}</span>
+                  <span className="link-title2 title">{children}</span>
+                </div>
+              </span>
+              {variant === "underline" && iconPosition === "right" && (
+                <CgArrowTopRight size={iconSize} />
+              )}
+            </div>
+            {variant === "underline" && (
+              <div className="w-full h-[1px] bg-primary mt-[10px]"></div>
             )}
-          >
-            {variant === "underline" && iconPosition === "left" && (
-              <CgArrowTopRight size={iconSize} />
-            )}
-            <span className="mask">
-              <div className="link-container">
-                <span className="link-title1 title">{children}</span>
-                <span className="link-title2 title">{children}</span>
-              </div>
-            </span>
-            {variant === "underline" && iconPosition === "right" && (
-              <CgArrowTopRight size={iconSize} />
-            )}
-          </div>
-          {variant === "underline" && (
-            <div className="w-full h-[1px] bg-primary mt-[15px]"></div>
-          )}
-        </>
-      </Link>
+          </>
+        </Link>
+      ) : (
+        <Link
+          href={link}
+          type="link"
+          className={clsx(variantStyles, iconSize, className)}
+        >
+          {children}
+        </Link>
+      )}
     </>
   );
 };

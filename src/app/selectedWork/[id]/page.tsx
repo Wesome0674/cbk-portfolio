@@ -1,21 +1,20 @@
 import React from "react";
-/* import prisma from "@/prisma";
+import prisma from "@/prisma";
 import { Typographie } from "@/ui/design-system/Typographie";
 import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Button } from "@/ui/design-system/Button";
 import Image from "next/image";
-import Link from "next/link"; */
+import Link from "next/link";
 
-
-/* async function fetchProject(id: string) {
+async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
     where: { id: parseInt(id, 10) },
   });
   return project;
-} */
+}
 
-const Page = async (/* { params }: { params: Promise<{ id: string }> } */) => {
-/*   const project = await fetchProject((await params).id);
+const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const project = await fetchProject((await params).id);
 
   console.log(project);
 
@@ -26,10 +25,10 @@ const Page = async (/* { params }: { params: Promise<{ id: string }> } */) => {
       </div>
     );
   }
- */
+
   return (
     <div className="pt-[105px] px-4 flex w-full gap-[35px] relative">
-    {/*   <div className="space-y-[35px] flex-1">
+      <div className="space-y-[35px] flex-1">
         <div className="space-y-[35px]">
           <div className="space-y-[10px]">
             <div className="flex items-center justify-between">
@@ -106,9 +105,7 @@ const Page = async (/* { params }: { params: Promise<{ id: string }> } */) => {
                   >
                     DURATION
                   </Typographie>
-                  <Typographie
-                    variant="h6"
-                  >
+                  <Typographie variant="h6">
                     {project.duration} weeks
                   </Typographie>
                 </div>
@@ -168,7 +165,7 @@ const Page = async (/* { params }: { params: Promise<{ id: string }> } */) => {
             backgroundPosition: "center",
           }}
         ></div>
-      </div> */}
+      </div>
     </div>
   );
 };

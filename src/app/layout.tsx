@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <body className={`antialiased relative min-h-screen `}>
         <Image
           src="/img/png/bg.png"
