@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Typographie } from "../design-system/Typographie";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import gsap from 'gsap';
 import Link from "next/link";
 
 interface Props {
