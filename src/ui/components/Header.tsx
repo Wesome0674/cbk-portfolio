@@ -6,8 +6,8 @@ import { Button } from "../design-system/Button";
 import Image from "next/image";
 import NavBar from "./navigation/NavBar";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
