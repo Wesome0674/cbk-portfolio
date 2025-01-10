@@ -106,6 +106,10 @@ textarea::placeholder {
   max-width: 1352px;
 }
 
+.sidebar {
+  max-width: calc(100% - 22px);
+}
+
 .link {
   height: 30px;
   align-items: center;

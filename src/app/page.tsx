@@ -5,10 +5,12 @@ import Header from "@/ui/components/Header";
 import MyWork from "@/ui/components/projects/MyWork";
 import { CtaScroll } from "@/ui/components/ctaScroll";
 import MySkills from "@/ui/components/MySkills";
+import SideBar from "@/ui/components/navigation/SideBar";
 
 export default function Home() {
   return (
     <div className="relative">
+      <SideBar />
       <Header />
       <AboutMe />
       <MySkills />

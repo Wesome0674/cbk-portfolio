@@ -1,8 +1,7 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
-
+import {Context} from  "../../context/NavContext"
 
 export const metadata: Metadata = {
   title: "CBK-portfolio",
@@ -10,12 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html className="scroll-smooth" lang="en">
       <body className={`antialiased relative min-h-screen `}>
@@ -26,7 +23,10 @@ export default function RootLayout({
           alt=""
           className="fixed h-full w-full z-[-1] object-cover"
         />
-        <div className="container mx-auto">{children}</div>
+
+        <div className="container mx-auto">
+          <Context>{children}</Context>
+        </div>
       </body>
     </html>
   );
