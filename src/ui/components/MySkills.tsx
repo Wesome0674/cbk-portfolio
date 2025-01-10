@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const MySkills = () => {
   return (
-    <div id="myskills" className="w-full min-h-screen space-y-[140px] skills-container mx-auto flex items-center justify-center flex-col">
-      <div className="flex items-center justify-between w-full gap-2">
+    <div id="myskills" className="w-full min-h-screen space-y-[14vh] skills-container mx-auto flex items-center justify-center flex-col">
+      <div className="flex flex-col md:flex-row gap-12 items-center justify-between w-full ">
         <div className="space-y-[6px] max-w-[419px]">
           <Typographie>LYCEE LOUIS LACHENAL</Typographie>
           <div>
             <Typographie
               className="font-druk"
-              variant="h1"
+              variant="date"
               theme="tercery"
               textEffect="large"
             >
@@ -25,10 +25,10 @@ const MySkills = () => {
           </div>
         </div>
         <div>
-          <Image alt="" src="/img/png/languages.png" width={497} height={457} />
+          <Image alt="" src="/img/png/languages.png" className="max-w-[60vw]" width={497} height={457} />
         </div>
       </div>
-      <div className="flex items-center justify-between w-full gap-[90px]">
+      <div className="flex items-center justify-between w-full gap-[4.688vw]">
         <div className="flex flex-col items-center gap-[10px] w-full">
           <Typographie variant="h6">2021</Typographie>
           <div className=" h-2 rounded-[2px] border-primary border-2 w-full">

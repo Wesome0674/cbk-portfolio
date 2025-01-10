@@ -3,20 +3,24 @@ import Image from "next/image";
 
 interface Props {
   size?: "small" | "medium";
+  inputType?: "button" | "submit" | "reset";
   variant?: "accent" | "outline";
   icon?: { icon: React.ElementType };
   iconPosition?: "left" | "right";
   className?: string;
   children?: React.ReactNode;
+  disabled?: boolean; // Ajout de la prop disabled
 }
 
 export const Button = ({
   size = "medium",
   className,
+  inputType = "button",
   variant = "accent",
   icon,
   iconPosition = "right",
   children,
+  disabled = false, // Valeur par défaut pour disabled
 }: Props) => {
   let variantStyles: string = "",
     sizeStyles: string = "",
@@ -24,12 +28,16 @@ export const Button = ({
 
   switch (variant) {
     case "accent":
-      variantStyles =
-        "bg-tercery text-primary rounded-full border border-primary font-medium button-outline";
+      variantStyles = clsx(
+        "bg-tercery text-primary rounded-full border border-primary font-medium button-outline",
+        disabled && "bg-gray-300 text-gray-500 border-gray-300 cursor-not-allowed"
+      );
       break;
     case "outline":
-      variantStyles =
-        "bg-none border border-primary text-primary rounded-full font-medium";
+      variantStyles = clsx(
+        "bg-none border border-primary text-primary rounded-full font-medium",
+        disabled && "border-gray-300 text-gray-500 cursor-not-allowed"
+      );
       break;
   }
 
@@ -47,7 +55,7 @@ export const Button = ({
   return (
     <>
       <button
-        type="button"
+        type={inputType}
         className={clsx(
           variantStyles,
           sizeStyles,
@@ -55,6 +63,7 @@ export const Button = ({
           className,
           "group w-fit"
         )}
+        disabled={disabled} // Ajout de l'attribut disabled
       >
         <div
           className={clsx(
@@ -64,17 +73,24 @@ export const Button = ({
         >
           {icon && iconPosition === "left" && <icon.icon size={iconSize} />}
 
-          {/* Éléments invisibles et de largeur zéro au départ, visibles et avec largeur augmentée au hover */}
           {!icon ? (
             <>
               <Image
-                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className={clsx(
+                  "opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                  disabled && "hidden" // Cache l'animation si désactivé
+                )}
                 src="/img/svg/star.svg"
                 alt=""
                 width={12}
                 height={12}
               />
-              <div className="w-0 h-[1px] bg-primary opacity-0 group-hover:opacity-100 group-hover:w-[12px] group-hover:visible transition-all duration-300 ease-in-out"></div>
+              <div
+                className={clsx(
+                  "w-0 h-[1px] bg-primary opacity-0 group-hover:opacity-100 group-hover:w-[12px] group-hover:visible transition-all duration-300 ease-in-out",
+                  disabled && "hidden" // Cache l'animation si désactivé
+                )}
+              ></div>
             </>
           ) : (
             ""
@@ -84,9 +100,17 @@ export const Button = ({
 
           {!icon ? (
             <>
-              <div className="w-0 h-[1px] bg-primary opacity-0 group-hover:opacity-100 group-hover:w-[12px] group-hover:visible transition-all duration-300 ease-in-out"></div>
+              <div
+                className={clsx(
+                  "w-0 h-[1px] bg-primary opacity-0 group-hover:opacity-100 group-hover:w-[12px] group-hover:visible transition-all duration-300 ease-in-out",
+                  disabled && "hidden" // Cache l'animation si désactivé
+                )}
+              ></div>
               <Image
-                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className={clsx(
+                  "opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                  disabled && "hidden" // Cache l'animation si désactivé
+                )}
                 src="/img/svg/star.svg"
                 alt=""
                 width={12}

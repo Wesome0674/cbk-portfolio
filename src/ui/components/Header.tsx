@@ -6,8 +6,9 @@ import { Button } from "../design-system/Button";
 import Image from "next/image";
 import NavBar from "./navigation/NavBar";
 import Link from "next/link";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TextAnimation from "./TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,36 +27,21 @@ const Header = () => {
     if (headerRef.current) {
       imagesRef.current.forEach((image, index) => {
         if (!image) return;
+
         gsap.to(image, {
-          y: index % 2 === 0 ? -300 : 300,
-          rotation: index % 2 === 0 ? 20 : -20,
+          y: index % 2 === 0 ? "-15vh" : "15vh", // Déplacement vertical basé sur l'index avec unité relative
+          scale: 1.1, // Légère mise à l'échelle
+          rotation: index % 2 === 0 ? 10 : -10, // Rotation alternée
           ease: "power1.out",
           scrollTrigger: {
             trigger: headerRef.current,
             start: "top top",
-            end: "300%",
+            end: "200%",
             scrub: 0.5,
           },
         });
       });
     }
-
-    // Animation pour la rotation des logos toutes les 1,5 secondes
-    const rotateLogos = gsap.timeline({
-      repeat: -1, // Infinite repeat
-      repeatDelay: 0.8, // Délai entre les répétitions
-    });
-
-    rotateLogos
-      .to(".rotate-logo", {
-        rotation: 360,
-        duration: 0.8, // Durée d'une rotation complète
-        ease: "none",
-      })
-      .to(".rotate-logo", {
-        rotation: 0,
-        duration: 0, // Retour à 0 avant de redémarrer
-      });
   }, []);
 
   return (
@@ -64,50 +50,62 @@ const Header = () => {
       id="header"
       className="w-full min-h-screen relative mb-[100px]"
     >
-      <Image
-        ref={setImageRef}
-        alt=""
-        src="/img/png/headerImg1.png"
-        width={175}
-        height={193}
-        className="absolute top-[64.815%] left-[67.708%]"
-      />
-      <Image
-        ref={setImageRef}
-        alt=""
-        src="/img/png/headerImg2.png"
-        width={405}
-        height={366}
-        className="absolute top-[74.074%] left-[13.021%]"
-      />
-      <Image
-        ref={setImageRef}
-        alt=""
-        src="/img/png/headerImg3.png"
-        width={252}
-        height={279}
-        className="absolute top-[41.667%] left-[78.125%]"
-      />
-      <Image
-        ref={setImageRef}
-        alt=""
-        src="/img/png/headerImg4.png"
-        width={161}
-        height={159}
-        className="absolute top-[55.556%] left-[20.438%]"
-      />
-      <Image
-        ref={setImageRef}
-        alt=""
-        src="/img/png/headerImg5.png"
-        width={188}
-        height={241}
-        className="absolute top-[83.333%] left-[75.521%]"
-      />
+      {/* Images animées */}
+      <div className="absolute top-[64.815%] left-[67.708%] w-[9vw] h-[9vw]">
+        <Image
+          ref={setImageRef}
+          alt=""
+          src="/img/png/headerImg1.png"
+          layout="fill"
+          className="object-contain"
+        />
+      </div>
+
+      <div className="absolute top-[74.074%] left-[13.021%] w-[17vw] h-[17vw]">
+        <Image
+          ref={setImageRef}
+          alt=""
+          src="/img/png/headerImg2.png"
+          layout="fill"
+          className="object-contain"
+        />
+      </div>
+
+      <div className="absolute top-[41.667%] left-[78.125%] w-[12vw] h-[12vw]">
+        <Image
+          ref={setImageRef}
+          alt=""
+          src="/img/png/headerImg3.png"
+          layout="fill"
+          className="object-contain"
+        />
+      </div>
+
+      <div className="absolute top-[55.556%] left-[20.438%] w-[8vw] h-[8vw]">
+        <Image
+          ref={setImageRef}
+          alt=""
+          src="/img/png/headerImg4.png"
+          layout="fill"
+          className="object-contain"
+        />
+      </div>
+
+      <div className="absolute top-[83.333%] left-[75.521%] w-[10vw] h-[10vw]">
+        <Image
+          ref={setImageRef}
+          alt=""
+          src="/img/png/headerImg5.png"
+          layout="fill"
+          className="object-contain"
+        />
+      </div>
+
+      {/* Contenu principal */}
       <NavBar />
 
-      <div className="space-y-[200px]">
-        <div className="flex pt-[305px] flex-col  w-fit mx-auto items-center gap-[30px]">
+      <div className="space-y-[200px] relative z-20">
+        <div className="flex pt-[305px] flex-col w-fit mx-auto items-center gap-[30px]">
           <div className="flex flex-col items-center gap-[10px]">
             <Typographie
               className="text-center font-calfine uppercase"
@@ -122,7 +120,7 @@ const Header = () => {
                 textEffect="large"
                 className="font-calfine uppercase"
               >
-                developper
+                <TextAnimation />
               </Typographie>
             </Typographie>
             <div className="flex items-center gap-2">
@@ -131,7 +129,7 @@ const Header = () => {
                 src="/img/svg/long.svg"
                 width={14}
                 height={19.09}
-                className="rotate-logo"
+                className=" animate-spin"
               />
               <Typographie variant="link" weight="medium">
                 BASED IN FRANCE
@@ -141,12 +139,12 @@ const Header = () => {
                 src="/img/svg/long.svg"
                 width={14}
                 height={19.09}
-                className="rotate-logo"
+                className=" animate-spin"
               />
             </div>
           </div>
 
-          <Typographie className="uppercase text-center max-w-[776px] ">
+          <Typographie className="uppercase text-center max-w-[776px]">
             Hi i’m Boularand Killian, a 18 year old young man passionate about
             Web technologies and Entrepreneurship. Ready to take this journey
             with me to discover my personal world and what i do ?
@@ -160,11 +158,11 @@ const Header = () => {
             </Link>
           </div>
         </div>
-        <div className=" flex flex-col items-center gap-[5px] ">
+        <div className="flex flex-col items-center gap-[5px]">
           <Typographie variant="h6">Explore More</Typographie>
           <Image
             alt=""
-            className="h-[43px] w-[43px]"
+            className="h-[43px] w-[43px] seemore"
             src="/img/png/see.png"
             width={500}
             height={500}

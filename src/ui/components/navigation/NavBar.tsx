@@ -15,7 +15,7 @@ const NavBar = () => {
   const {navVisibility, setNavVisibility} = useNavContext();
 
   return (
-    <nav className="pt-[47px] fixed z-50 container mx-auto top-0  w-full">
+    <nav className="pt-[47px] fixed z-50 container mx-auto top-0  w-full backdrop-blur-md">
       <div className="flex items-center w-full justify-between py-[25px] border-y border-y-primary">
         <div className="w-full lg:hidden block" onClick={() => setNavVisibility(!navVisibility)}>
           <TbMenu3 size={35} color="#1c1b29" />

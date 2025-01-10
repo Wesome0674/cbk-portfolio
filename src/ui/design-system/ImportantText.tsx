@@ -16,7 +16,7 @@ export const ImportantText = ({ className, img, children }: Props) => {
         src={img}
         width={50}
         height={50}
-        className="absolute bottom-[2px] left-0 w-full h-[8px] translate-y-[5px] object-cover"
+        className="absolute bottom-[-2px] left-0 w-full h-[12px] translate-y-[5px] object-cover"
       />
     </span>
   );

@@ -73,6 +73,16 @@ textarea::placeholder {
   position: absolute;
   left: -120px;
   top: 130px;
+  animation: handshowAnim 1000ms infinite ease-in-out alternate;
+}
+
+@keyframes handshowAnim {
+  0% {
+    transform: translate(-100px, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .handshow:after {
@@ -87,7 +97,8 @@ textarea::placeholder {
 @media (max-width: 768px) {
   .handshow:before,
   .handshow:after,
-  .handwrite:after {
+  .handwrite:after,
+  .arrow:before {
     display: none;
   }
 }
@@ -158,4 +169,23 @@ textarea::placeholder {
 
 .link:hover .link-title2 {
   transform: rotate(0);
+}
+
+.text-animation .letter {
+  display: inline-block;
+  transform-origin: center bottom;
+  opacity: 0;
+}
+
+.seemore {
+  animation: seemoreAnim 1000ms infinite ease-in-out alternate;
+}
+
+@keyframes seemoreAnim {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

@@ -21,18 +21,25 @@ export default {
       "3.5xl": [
         "clamp(50px, 5.208vw, 100px)",
         {
-          lineHeight: "clamp(65px, 6.51vw, 125px)",
+          lineHeight: "clamp(80px, 6.51vw, 125px)",
+          letterSpacing: "0px",
+        },
+      ],
+      "date": [
+        "clamp(75px, 5.208vw, 100px)",
+        {
+          lineHeight: "clamp(90px, 6.51vw, 125px)",
           letterSpacing: "0px",
         },
       ],
       "3xl": [
-        " clamp(40px, 4.167vw, 80px)",
+        " clamp(50px, 4.167vw, 80px)",
         {
-          lineHeight: "clamp(50px, 5.208vw, 100px)",
+          lineHeight: "clamp(60px, 5.208vw, 100px)",
         },
       ],
       "2xl": [
-        "clamp(30px ,3.125vw, 60px)",
+        "clamp(35px ,3.125vw, 60px)",
         {
           lineHeight: "71,8px",
         },
@@ -57,7 +64,7 @@ export default {
         },
       ],
       base: [
-        "18px",
+        "clamp(16px,0.938vw,18px)",
         {
           lineHeight: "22px",
         },

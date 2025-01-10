@@ -11,7 +11,8 @@ interface Props {
     | "h6"
     | "link"
     | "body-base"
-    | "body-sm";
+    | "body-sm"
+    | "date";
 
   component?:
     | "h1"
@@ -120,6 +121,9 @@ export const Typographie = ({
       break;
     case "body-sm":
       variantStyles = "text-sm";
+      break;
+    case "date":
+      variantStyles = "text-date";
       break;
   }
 

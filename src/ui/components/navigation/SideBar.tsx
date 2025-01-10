@@ -25,7 +25,7 @@ const SideBar = () => {
         className="fixed h-full w-full z-[-1] object-cover"
       />
       <div className="sidebar mx-auto pt-[24px]">
-        <div className="w-full flex items-center justify-between">
+        <div className="w-full flex items-center justify-between border-b border-primary py-6">
           <div
             className="w-full cursor-pointer"
             onClick={handleCloseSidebar} // Utilisation de la fonction

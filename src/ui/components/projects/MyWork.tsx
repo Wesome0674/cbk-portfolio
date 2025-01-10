@@ -30,10 +30,13 @@ interface Project {
 const MyWork = async () => {
   const projects = await getProjects();
   return (
-    <div id="mywork" className=" w-full min-h-screen flex items-center justify-center">
+    <div
+      id="mywork"
+      className=" w-full min-h-screen flex items-center justify-center"
+    >
       <div className="w-full mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
         <div className="flex flex-col items-center gap-[30px] ">
-          <ImportantText img="/img/png/Wave-Marker.png">
+          <ImportantText img="/img/svg/Wave-Marker.svg">
             <Typographie
               variant="h6"
               theme="secondary"
@@ -61,13 +64,16 @@ const MyWork = async () => {
             <div key={project.id} className="space-y-[30px] w-full mb-[30px]">
               <hr className="w-full border border-primary" />
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-[75px]">
-                  <Image
-                    src="/img/png/Project1.png"
-                    alt=""
-                    width={296}
-                    height={237}
-                  />
+                <div className="flex flex-col md:flex-row items-center gap-[75px] w-full">
+                  <div className=" md:max-w-[350px] w-full aspect-video relative rounded-[10px]">
+                    <Image
+                      src="/img/png/Project1.png"
+                      alt=""
+                      fill
+                      className="object-cover  rounded-[10px]"
+                    />
+                  </div>
+
                   <div className="flex flex-col gap-[15px]">
                     <Typographie
                       className="font-calfine"
@@ -90,6 +96,7 @@ const MyWork = async () => {
                   weight="medium"
                   variant="h5"
                   theme="secondary"
+                  className="hidden md:block"
                   textEffect="large"
                 >
                   {projects.indexOf(project) + 1 < 10
