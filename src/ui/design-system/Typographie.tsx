@@ -1,4 +1,9 @@
+"use client";
+
 import clsx from "clsx";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface Props {
   variant?:
@@ -13,7 +18,6 @@ interface Props {
     | "body-base"
     | "body-sm"
     | "date";
-
   component?:
     | "h1"
     | "h2"
@@ -41,11 +45,26 @@ export const Typographie = ({
   className,
   children,
 }: Props) => {
+  // Styles par défaut
   let variantStyles: string = "",
     colorStyles: string = "",
     weightStyles: string = "",
-    shadowstyle: string = "";
+    shadowstyle: string = "",
+    aosAnimation: string = "";
 
+  // Initialiser AOS pour l'animation
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      easing: "ease-out",
+    });
+
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
+  // Définir les styles en fonction des props
   switch (theme) {
     case "primary":
       colorStyles = "text-primary";
@@ -97,12 +116,15 @@ export const Typographie = ({
       break;
     case "h1":
       variantStyles = "text-3.5xl";
+      aosAnimation = "zoom-in-up";
       break;
     case "h2":
       variantStyles = "text-3xl";
+      aosAnimation = "fade-up-right";
       break;
     case "h3":
       variantStyles = "text-2xl";
+      aosAnimation = "zoom-in-up";
       break;
     case "h4":
       variantStyles = "text-xl";
@@ -124,11 +146,14 @@ export const Typographie = ({
       break;
     case "date":
       variantStyles = "text-date";
+      aosAnimation = "zoom-out-right";
+
       break;
   }
 
   return (
     <Component
+      data-aos={aosAnimation} // Ajout de l'animation AOS
       className={clsx(
         variantStyles,
         colorStyles,

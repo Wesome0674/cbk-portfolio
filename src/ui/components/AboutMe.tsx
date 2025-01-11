@@ -8,7 +8,7 @@ import { ImportantText } from "../design-system/ImportantText";
 const AboutMe = () => {
   return (
     <div id="aboutme" className="w-full min-h-screen flex items-center justify-center">
-      <div className="space-y-[50px] lg:translate-x-[75px] max-w-fit mx-auto ">
+      <div className="space-y-[50px] lg:translate-x-[75px] xl:max-w-fit w-full mx-auto ">
         <div className="flex flex-col lg:flex-row gap-7">
           <div className="space-y-[29px] z-10">
             <Typographie
@@ -37,8 +37,8 @@ const AboutMe = () => {
             />
           </div>
         </div>
-        <div className="flex lg:items-end justify-between flex-col-reverse lg:flex-row gap-x-[180px] gap-8">
-          <div className="w-[256px] flex flex-col gap-[15px]">
+        <div className="flex lg:items-end justify-between flex-col-reverse lg:flex-row gap-x-[180px] gap-y-16">
+          <div className="lg:w-[256px] w-full flex flex-col gap-[15px]">
             <div>
               <ImportantText img="/img/svg/Wave-Marker.svg">
                 <Typographie

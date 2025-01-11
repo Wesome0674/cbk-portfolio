@@ -9,6 +9,11 @@ import Link from "next/link";
 async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
     where: { id: parseInt(id, 10) },
+    include: {
+      roles: true, // Inclut les rôles liés au projet
+      technologies: true, // Inclut les technologies liées au projet
+      images: true, // Inclut les images du projet
+    },
   });
   return project;
 }
@@ -27,7 +32,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   }
 
   return (
-    <div className="pt-[105px] px-4 flex w-full gap-[35px] relative">
+    <div className="pt-[105px] px-4 flex w-full gap-[35px] relative flex-col lg:flex-row">
       <div className="space-y-[35px] flex-1">
         <div className="space-y-[35px]">
           <div className="space-y-[10px]">
@@ -76,7 +81,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         <hr className="w-full border border-primary" />
         <div className="space-y-[40px]">
           <div className="space-y-[50px]">
-            <div>
+            <div className="space-y-[7px]">
               <Typographie
                 variant="h6"
                 theme="secondary"
@@ -85,17 +90,30 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
               >
                 TOOLS
               </Typographie>
+              <div className="flex items-center gap-[15px] flex-wrap max-w-[300px]">
+                {project.technologies.map((item) => (
+                  <div key={item.id}>
+                    <Typographie className="underline" variant="h6">
+                      {item.name}
+                    </Typographie>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="flex gap-[65px]">
               <div className="space-y-[20px]">
-                <Typographie
-                  variant="h6"
-                  theme="secondary"
-                  weight="bold"
-                  textEffect="medium"
-                >
-                  YEAR
-                </Typographie>
+                <div className="space-y-[7px]">
+                  <Typographie
+                    variant="h6"
+                    theme="secondary"
+                    weight="bold"
+                    textEffect="medium"
+                  >
+                    YEAR
+                  </Typographie>
+                  <Typographie variant="h6">{project.createdYear}</Typographie>
+                </div>
+
                 <div className="space-y-[7px]">
                   <Typographie
                     variant="h6"
@@ -110,18 +128,27 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
                   </Typographie>
                 </div>
               </div>
-              <Typographie
-                variant="h6"
-                theme="secondary"
-                weight="bold"
-                textEffect="medium"
-              >
-                ROLES
-              </Typographie>
+              <div className="space-y-[7px]">
+                <Typographie
+                  variant="h6"
+                  theme="secondary"
+                  weight="bold"
+                  textEffect="medium"
+                >
+                  ROLES
+                </Typographie>
+                <div className="space-y-[10px]">
+                  {project.roles.map((item) => (
+                    <div key={item.id}>
+                      <Typographie variant="h6">{item.name}</Typographie>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
-          <Link href="/" className="flex items-center gap-[5px]">
+          <Link href="/#mywork" className="flex items-center gap-[5px]">
             <Image alt="" src="/img/svg/getBack.svg" width={24} height={24} />
             <Typographie
               variant="h6"
@@ -136,35 +163,18 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
 
       <div className="flex-1 space-y-[35px]">
-        <div
-          className="w-full aspect-video "
-          style={{
-            backgroundImage: "url(/img/png/imgAboutMe.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-          }}
-        ></div>
-
-        <div
-          className="w-full aspect-video  "
-          style={{
-            backgroundImage: "url(/img/png/imgAboutMe.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-          }}
-        ></div>
-
-        <div
-          className="w-full aspect-video"
-          style={{
-            backgroundImage: "url(/img/png/imgAboutMe.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-          }}
-        ></div>
+        {project.images.map((item) => (
+          <div
+            key={item.id}
+            className="w-full aspect-video rounded-[10px]"
+            style={{
+              backgroundImage: `url(${item.url})`, // Ajout de `url()`
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+        ))}
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ const TextAnimation = () => {
 
     // Lancer la première animation
     animateText();
-  }, []);
+  }, []); // Si tu veux ignorer words dans les dépendances
 
   return (
     <div

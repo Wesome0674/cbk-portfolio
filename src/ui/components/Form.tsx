@@ -86,26 +86,27 @@ const Form = () => {
               your ideas to life
             </Typographie>
           </Typographie>
-          <div className="w-fit relative">
-            <Typographie className="max-w-[434px] text-center">
-              “Contact me or my agency,{" "}
-              <Links
-                link="https://frontend-axis.vercel.app"
-                variant="externe"
-                className="inline-block"
-              >
-                Axis Studio
-              </Links>
-              , to turn your vision into reality.
-            </Typographie>
-            <Image
-              alt=""
-              src="/img/svg/magic.svg"
-              width={18}
-              height={18}
-              className="absolute right-[28%] bottom-0"
-            />
-          </div>
+
+          <Typographie className="max-w-[434px] text-center inline-block">
+            “Contact me or my agency,{" "}
+            <Links
+              link="https://frontend-axis.vercel.app"
+              variant="externe"
+              className="inline-block"
+            >
+              Axis Studio
+            </Links>
+            , to turn your vision into reality.
+            <span className="inline-flex items-center">
+              <Image
+                alt="Magic Icon"
+                src="/img/svg/magic.svg"
+                width={18}
+                height={18}
+                className="inline-block align-middle ml-2" // Utilisation de 'align-middle' pour l'aligner verticalement avec le texte
+              />
+            </span>
+          </Typographie>
         </div>
         <form
           onSubmit={handleSubmit}
@@ -121,7 +122,7 @@ const Form = () => {
               onChange={handleChange("name")}
             />
             <Inputs
-             required
+              required
               typeOfInput="text"
               icon="/img/svg/envelope.svg"
               placeHolder="Enter Your Email"
@@ -131,7 +132,6 @@ const Form = () => {
           </div>
           <div className="flex items-center gap-[10px]">
             <Inputs
-              
               typeOfInput="text"
               icon="/img/svg/job.svg"
               placeHolder="Business name"

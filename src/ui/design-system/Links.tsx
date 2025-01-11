@@ -1,12 +1,17 @@
-import clsx from "clsx";
-import Link from "next/link";
-import { CgArrowTopRight } from "react-icons/cg";
+'use client';
+
+import clsx from 'clsx';
+import Link from 'next/link';
+import { CgArrowTopRight } from 'react-icons/cg';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 interface Props {
-  variant?: "normal" | "underline" | "footer" | "externe";
+  variant?: 'normal' | 'underline' | 'footer' | 'externe';
   link: string;
   icon?: { icon: React.ElementType };
-  iconPosition?: "left" | "right";
+  iconPosition?: 'left' | 'right';
   className?: string;
   children?: React.ReactNode;
 }
@@ -14,46 +19,56 @@ interface Props {
 export const Links = ({
   className,
   link,
-  variant = "normal",
-  iconPosition = "right",
+  variant = 'normal',
+  iconPosition = 'right',
   children,
 }: Props) => {
-  let variantStyles: string = "",
+  let variantStyles: string = '',
     iconSize: number = 0;
 
+  // Styles de variant
   switch (variant) {
-    case "normal":
-      variantStyles = " text-primary text-base uppercase font-normal";
+    case 'normal':
+      variantStyles = ' text-primary text-base uppercase font-normal';
       break;
-    case "underline":
-      variantStyles = " text-primary text-base font-normal";
+    case 'underline':
+      variantStyles = ' text-primary text-base font-normal';
       iconSize = 20;
       break;
-    case "footer":
+    case 'footer':
       variantStyles =
-        " text-primary text-secondary  font-calfine text-[40px] text-large-effect";
+        ' text-primary text-secondary font-calfine text-[40px] text-large-effect';
       break;
-    case "externe":
-      variantStyles = " text-primary text-base font-normal underline";
+    case 'externe':
+      variantStyles = ' text-primary text-base font-normal underline';
       break;
   }
 
+  // Initialiser AOS pour l'animation flip-left
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out',
+    });
+  }, []);
+
   return (
     <>
-      {variant !== "footer" ? (
+      {variant !== 'footer' ? (
         <Link
           href={link}
           type="link"
-          className={clsx(variantStyles, iconSize, className)}
+          data-aos="flip-left" // Ajout de l'animation flip-left à l'élément Link
+          className={clsx(variantStyles, className)}
         >
           <>
             <div
               className={clsx(
-                "link",
-                variant === "underline" && "flex items-center justify-between"
+                'link',
+                variant === 'underline' && 'flex items-center justify-between'
               )}
             >
-              {variant === "underline" && iconPosition === "left" && (
+              {variant === 'underline' && iconPosition === 'left' && (
                 <CgArrowTopRight size={iconSize} />
               )}
               <span className="mask">
@@ -62,11 +77,11 @@ export const Links = ({
                   <span className="link-title2 title">{children}</span>
                 </div>
               </span>
-              {variant === "underline" && iconPosition === "right" && (
+              {variant === 'underline' && iconPosition === 'right' && (
                 <CgArrowTopRight size={iconSize} />
               )}
             </div>
-            {variant === "underline" && (
+            {variant === 'underline' && (
               <div className="w-full h-[1px] bg-primary mt-[10px]"></div>
             )}
           </>
@@ -75,7 +90,8 @@ export const Links = ({
         <Link
           href={link}
           type="link"
-          className={clsx(variantStyles, iconSize, className)}
+          data-aos="flip-left" // Ajout de l'animation flip-left à l'élément Link
+          className={clsx(variantStyles, className)}
         >
           {children}
         </Link>

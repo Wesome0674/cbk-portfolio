@@ -12,6 +12,7 @@
     "@gsap/react": "^2.1.1",
     "@prisma/client": "^6.0.1",
     "@studio-freight/lenis": "^1.0.42",
+    "aos": "^2.3.4",
     "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "next": "^15.1.4",
@@ -21,6 +22,7 @@
     "resend": "^4.0.1"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",

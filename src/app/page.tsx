@@ -11,11 +11,14 @@ export default function Home() {
   return (
     <div className="relative">
       <SideBar />
-      <Header />
-      <AboutMe />
-      <MySkills />
-      <MyWork />
-      <Form />
+      <div className="space-y-[100px]">
+        <Header />
+        <AboutMe />
+        <MySkills />
+        <MyWork />
+        <Form />
+      </div>
+
       <div className="fixed bottom-4 right-4">
         <CtaScroll variant="contact" />
       </div>

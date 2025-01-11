@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio <onboarding@resend.dev>',
+      from: 'Portfolio <noreply@cbk-portfolio.com>',
       to: ['killian.boularand@icloud.com'], // Remplacez par votre email
       subject: `New message from ${name}`,
       react: EmailTemplate({

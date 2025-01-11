@@ -48,7 +48,7 @@ const Header = () => {
     <header
       ref={headerRef}
       id="header"
-      className="w-full min-h-screen relative mb-[100px]"
+      className="w-full min-h-screen relative"
     >
       {/* Images animées */}
       <div className="absolute top-[64.815%] left-[67.708%] w-[9vw] h-[9vw]">
@@ -57,7 +57,7 @@ const Header = () => {
           alt=""
           src="/img/png/headerImg1.png"
           layout="fill"
-          className="object-contain"
+          className="object-contain hidden md:block"
         />
       </div>
 
@@ -67,7 +67,7 @@ const Header = () => {
           alt=""
           src="/img/png/headerImg2.png"
           layout="fill"
-          className="object-contain"
+          className="object-contain hidden md:block"
         />
       </div>
 
@@ -77,7 +77,7 @@ const Header = () => {
           alt=""
           src="/img/png/headerImg3.png"
           layout="fill"
-          className="object-contain"
+          className="object-contain hidden md:block"
         />
       </div>
 
@@ -87,7 +87,7 @@ const Header = () => {
           alt=""
           src="/img/png/headerImg4.png"
           layout="fill"
-          className="object-contain"
+          className="object-contain hidden md:block"
         />
       </div>
 
@@ -97,7 +97,7 @@ const Header = () => {
           alt=""
           src="/img/png/headerImg5.png"
           layout="fill"
-          className="object-contain"
+          className="object-contain hidden md:block"
         />
       </div>
 
