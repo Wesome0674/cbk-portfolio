@@ -6,7 +6,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function getSkills() {
-  const skills = await prisma.Skills.findMany({
+  const skills = await prisma.skills.findMany({
     orderBy: { id: "asc" },
   });
   return skills;
