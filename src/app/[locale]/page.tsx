@@ -7,6 +7,7 @@ import { CtaScroll } from "@/ui/components/ctaScroll";
 import MySkills from "@/ui/components/MySkills";
 import SideBar from "@/ui/components/navigation/SideBar";
 
+
 export default function Home() {
   return (
     <div className="relative">

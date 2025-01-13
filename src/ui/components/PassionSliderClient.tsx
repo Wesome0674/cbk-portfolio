@@ -1,12 +1,16 @@
 "use client";
-import { useLocale } from "next-intl";
+
 import Image from "next/image";
 import { Typographie } from "../design-system/Typographie";
 import PassionTitle from "./PassionTitle";
 
-export default function PassionSliderClient({ passions }: { passions: any[] }) {
-  const locale = useLocale(); // La langue dynamique côté client
+type Passion = {
+  id: number;
+  name: string;
+  translations: { translatedName: string }[];
+};
 
+export default function PassionSliderClient({ passions }: { passions: Passion[] }) {
   return (
     <div className="max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
       <PassionTitle />

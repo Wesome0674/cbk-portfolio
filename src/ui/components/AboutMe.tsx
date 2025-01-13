@@ -5,9 +5,11 @@ import Image from "next/image";
 import { Links } from "../design-system/Links";
 import { ImportantText } from "../design-system/ImportantText";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 const AboutMe = () => {
   const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <div
@@ -32,7 +34,7 @@ const AboutMe = () => {
                 {t("aboutMe.titre2")}
               </Typographie>
             </Typographie>
-            <PassionSlider />
+            <PassionSlider locale={locale} />
           </div>
           <div className="transform lg:-translate-x-[150px] lg:translate-y-[25px]">
             <Image

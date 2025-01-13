@@ -1,4 +1,4 @@
-// app/MySkills.tsx
+
 import React from "react";
 import MySkillsClient from "./MySkillsClient";
 import { PrismaClient } from "@prisma/client";
