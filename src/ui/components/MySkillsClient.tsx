@@ -102,7 +102,7 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
               }`}
             >
               <Typographie variant="h6">{skill.year}</Typographie>
-              <div className="h-2 rounded-[2px] border-primary border-2 w-full overflow-hidden">
+              <div className="h-[10px] rounded-full border-primary border-2 w-full overflow-hidden">
                 <div
                   className={`h-full ${
                     index === currentSkillIndex ? "bg-tercery" : "bg-gray-300"

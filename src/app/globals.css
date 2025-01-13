@@ -191,3 +191,9 @@ textarea::placeholder {
   }
 }
 
+.sidebarAnim {
+  background-image: url(/img/png/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ 

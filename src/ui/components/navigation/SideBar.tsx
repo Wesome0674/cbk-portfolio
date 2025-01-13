@@ -16,14 +16,8 @@ const SideBar = () => {
   const handleCloseSidebar = () => setNavVisibility(false); // Fonction pour fermer la sidebar
 
   return (
-    <div className="w-full h-full sidebarAnim overflow-y-auto pb-4 fixed top-0 right-0 z-[100] block lg:hidden">
-      <Image
-        src="/img/png/bg.png"
-        width={1920}
-        height={1080}
-        alt=""
-        className="fixed h-full w-full z-[-1] object-cover"
-      />
+    <div className="w-full h-full sidebarAnim overflow-y-auto pb-4 fixed top-0 right-0 z-[100] block lg:hidden ">
+    
       <div className="sidebar mx-auto pt-[24px]">
         <div className="w-full flex items-center justify-between border-b border-t border-primary py-6">
           <div
