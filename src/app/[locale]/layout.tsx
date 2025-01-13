@@ -4,8 +4,7 @@ import Image from "next/image";
 import { Context } from "../../../context/NavContext";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+
 
 export const metadata: Metadata = {
   title: "CBK-portfolio",

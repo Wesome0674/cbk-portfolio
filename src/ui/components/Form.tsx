@@ -82,10 +82,10 @@ const Form = () => {
             variant="h3"
             theme="secondary"
           >
-            {t("form.formTitle")}
+            {t("form.title1")}
             <Typographie variant="h3" theme="tercery">
               {" "}
-              {t("form.formTitle").split(" ")[4]} {/* "your ideas to life" */}
+              {t("form.title2")}
             </Typographie>
           </Typographie>
 
@@ -98,7 +98,7 @@ const Form = () => {
             >
               {t("form.agencyName")}
             </Links>
-            , to turn your vision into reality.
+            ,{t("form.descr")}
             <span className="inline-flex items-center">
               <Image
                 alt="Magic Icon"

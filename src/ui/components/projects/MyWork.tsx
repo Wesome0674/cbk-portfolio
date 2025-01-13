@@ -2,10 +2,10 @@ import { Button } from "@/ui/design-system/Button";
 import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Typographie } from "@/ui/design-system/Typographie";
 import { PrismaClient } from "@prisma/client";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import WorkHeader from "./WorkHeader";
 
 const prisma = new PrismaClient();
 
@@ -36,7 +36,6 @@ interface Project {
 }
 
 const MyWork = async () => {
-  const t = useTranslations(); // Récupère les traductions
   const projects = await getProjects();
   return (
     <div
@@ -44,30 +43,7 @@ const MyWork = async () => {
       className="w-full min-h-screen flex items-center justify-center"
     >
       <div className="w-full mx-auto max-w-[1341px] flex flex-col items-center gap-[75px]">
-        <div className="flex flex-col items-center gap-[30px]">
-          <ImportantText img="/img/svg/Wave-Marker.svg">
-            <Typographie
-              variant="h6"
-              theme="secondary"
-              className="uppercase"
-              weight="medium"
-            >
-              {t("work.tag")}
-            </Typographie>
-          </ImportantText>
-          <Typographie
-            textEffect="large"
-            className="font-calfine uppercase text-center"
-            variant="h3"
-            theme="secondary"
-          >
-            {t("work.titre1")}
-            <Typographie variant="h3" theme="tercery">
-              {" "}
-              {t("work.titre2")}
-            </Typographie>
-          </Typographie>
-        </div>
+        <WorkHeader />
         <div className="w-full">
           {projects.map((project: Project) => (
             <div key={project.id} className="space-y-[30px] w-full mb-[30px]">

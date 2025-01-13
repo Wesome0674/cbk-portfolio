@@ -35,8 +35,10 @@
   },
   "form": {
     "contactTitle": "Contactez-moi",
-    "formTitle": "Travaillons ensemble et donnons vie à vos idées",
-    "formDescription": "Contactez-moi ou mon agence,",
+    "title1": "Travaillons ensemble et",
+    "title2": "Amenons vos idée a la vie",
+    "formDescription": "Contacter moi ou mon agence,",
+    "descr": "pour transformer votre vision en réalité",
     "agencyName": "Axis Studio",
     "formPlaceholders": {
       "name": "Entrez votre nom",
@@ -56,6 +58,8 @@
   "work": {
     "titre1": "Découvrer les dernier",
     "titre2": "Projets que j'ai réalisé",
-    "tag": "Mon travail"
+    "tag": "Mon travail",
+    "seeMoreDetails": "En savoir plus",
+    "moreComingSoon": "Plus de projet prochainement"
   }
 }

@@ -35,9 +35,11 @@
   },
   "form": {
     "contactTitle": "Contact me",
-    "formTitle": "Let’s work together and bring your ideas to life",
+    "title1": "Let’s work together and",
+    "title2": "bring your ideas to life",
     "formDescription": "Contact me or my agency,",
     "agencyName": "Axis Studio",
+    "descr": "To turn your vision into reality.",
     "formPlaceholders": {
       "name": "Enter Your name",
       "email": "Enter Your Email",
@@ -56,6 +58,8 @@
   "work": {
     "titre1": "Let's Discover the latest",
     "titre2": "Project i made",
-    "tag": "My work"
+    "tag": "My work",
+    "seeMoreDetails": "SEE MORE DETAILS",
+    "moreComingSoon": "More Coming Soon"
   }
 }
