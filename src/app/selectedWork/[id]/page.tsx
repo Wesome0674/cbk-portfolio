@@ -32,7 +32,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   }
 
   return (
-    <div className="pt-[105px] px-4 flex w-full gap-[35px] relative flex-col lg:flex-row">
+    <div className="pt-[105px] px-4 pb-4 flex w-full gap-[35px] relative flex-col lg:flex-row">
       <div className="space-y-[35px] flex-1">
         <div className="space-y-[35px]">
           <div className="space-y-[10px]">
@@ -68,7 +68,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 {project.processDetails}
               </Typographie>
             </div>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 flex-wrap">
               <Link href={project.liveSiteUrl}>
                 <Button>VISITE WEBSITE</Button>
               </Link>
@@ -149,7 +149,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
 
           <Link href="/#mywork" className="flex items-center gap-[5px]">
-            <Image alt="" src="/img/svg/getBack.svg" width={24} height={24} />
+            <Image alt="" src="/img/svg/goBack.svg" width={24} height={24} />
             <Typographie
               variant="h6"
               theme="tercery"

@@ -1,68 +1,20 @@
+// app/MySkills.tsx
 import React from "react";
-import { Typographie } from "../design-system/Typographie";
-import Image from "next/image";
+import MySkillsClient from "./MySkillsClient";
+import { PrismaClient } from "@prisma/client";
 
-const MySkills = () => {
-  return (
-    <div id="myskills" className="w-full min-h-screen space-y-[14vh] skills-container mx-auto flex items-center justify-center flex-col">
-      <div className="flex flex-col md:flex-row gap-12 items-center justify-between w-full ">
-        <div className="space-y-[6px] max-w-[419px]">
-          <Typographie>LYCEE LOUIS LACHENAL</Typographie>
-          <div>
-            <Typographie
-              className="font-druk"
-              variant="date"
-              theme="tercery"
-              textEffect="large"
-            >
-              2021
-            </Typographie>
-            <Typographie variant="link" className="capitalize">
-              That’s the year I was introduced to programming languages in a
-              computer science class in high school, and as I kept coding, it
-              quickly turned into a true passion.
-            </Typographie>
-          </div>
-        </div>
-        <div>
-          <Image alt="" src="/img/png/languages.png" className="max-w-[60vw]" width={497} height={457} />
-        </div>
-      </div>
-      <div className="flex items-center justify-between w-full gap-[4.688vw]">
-        <div className="flex flex-col items-center gap-[10px] w-full">
-          <Typographie variant="h6">2021</Typographie>
-          <div className=" h-2 rounded-[2px] border-primary border-2 w-full">
-            <div className="w-full h-full bg-tercery"></div>
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-[10px] w-full">
-          <Typographie variant="h6">2022</Typographie>
-          <div className=" h-2 rounded-[2px] border-primary border-2 w-full">
-            <div className="w-full h-full bg-tercery"></div>
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-[10px] w-full">
-          <Typographie variant="h6">2023</Typographie>
-          <div className=" h-2 rounded-[2px] border-primary border-2 w-full">
-            <div className="w-full h-full bg-tercery"></div>
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-[10px] w-full">
-          <Typographie variant="h6">2024</Typographie>
-          <div className=" h-2 rounded-[2px] border-primary border-2 w-full">
-            <div className="w-full h-full bg-tercery"></div>
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-[10px] w-full">
-          <Typographie variant="h6">Future</Typographie>
-          <div className=" h-2 rounded-[2px] border-primary border-2 w-full">
-            <div className="w-full h-full bg-tercery"></div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  );
+const prisma = new PrismaClient();
+
+async function getSkills() {
+  const skills = await prisma.Skills.findMany({
+    orderBy: { id: "asc" },
+  });
+  return skills;
+}
+
+const MySkills = async () => {
+  const skills = await getSkills();
+  return <MySkillsClient skills={skills} />;
 };
 
 export default MySkills;

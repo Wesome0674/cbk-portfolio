@@ -49,3 +49,12 @@ model Role {
   name      String
   projects  Project[] // Many-to-many relation
 }
+
+
+model Skills {
+  id             Int           @id @default(autoincrement())
+  year           Int
+  description    String
+  location       String
+  img            String
+}
