@@ -1,0 +1,63 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "aboutMe": "Sobre mí",
+    "mySkills": "Mis habilidades",
+    "myWork": "Mi trabajo",
+    "contact": "Contacto",
+    "resume": "Currículum"
+  },
+  "header": {
+    "introText": "Hola, soy Boularand Killian, un joven de 18 años apasionado por las tecnologías web y el emprendimiento. ¿Estás listo para unirte a este viaje conmigo para descubrir mi mundo personal y lo que hago?",
+    "exploreMore": "Explorar más",
+    "basedIn": "UBICADO EN FRANCIA",
+    "myWork": "MI TRABAJO",
+    "mySkills": "MIS HABILIDADES",
+    "titre1": "Soy un creatif web",
+    "titre2-dev": "desarrollador",
+    "titre2-des": "diseñador",
+    "titre2-ent": "emprendedor"
+  },
+
+  "aboutMe": {
+    "introText": "Durante los últimos dos años, me he sumergido en el mundo de la programación y el diseño de interfaces, una pasión que comenzó en cuanto descubrí las infinitas posibilidades del mundo digital. Actualmente soy estudiante en L'Ecole By CCI Haute-Savoie, en el campo digital, donde continúo desarrollando mis habilidades en un entorno dinámico e innovador. Antes de eso, obtuve un diploma de secundaria en STIDD, (Ciencias y Tecnologías de la Ingeniería y Desarrollo Sostenible), un programa que me brindó una base sólida en ingeniería y desarrollo sostenible, campos que aún influyen en mis proyectos hoy en día.",
+    "goal": "Mi objetivo es combinar mis conocimientos técnicos y creativos para convertirme en un emprendedor en la industria tecnológica, donde pueda crear soluciones que empujen los límites de la innovación y la eficiencia.",
+    "followMe": "Sígueme",
+    "socialLinks": {
+      "instagram": "Instagram",
+      "github": "Github",
+      "linkedin": "Linkedin"
+    },
+    "titre1": "hablemos un poco",
+    "titre": "de mi",
+    "titre2": "ruta",
+    "passions": "pasión"
+  },
+
+  
+  "form": {
+    "contactTitle": "Contácta me",
+    "formTitle": "Trabajemos juntos y hagamos realidad tus ideas",
+    "formDescription": "Contáctame o mi agencia,",
+    "agencyName": "Axis Studio",
+    "formPlaceholders": {
+      "name": "Ingresa tu nombre",
+      "email": "Ingresa tu correo electrónico",
+      "business": "Nombre del negocio",
+      "phone": "Número de teléfono",
+      "message": "Ingresa tu mensaje"
+    },
+    "submit": "ENVIAR",
+    "sending": "Enviando..."
+  },
+  "skills": {
+    "titre1": "descubre las tecnologías con",
+    "titre2": "las que trabajo",
+    "tag": "mis habilidades"
+  },
+  "work": {
+    "titre1": "Vamos a descubrir lo último",
+    "titre2": "proyecto que hice",
+    "tag": "Mi trabajo"
+  }
+}

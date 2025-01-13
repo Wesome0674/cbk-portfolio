@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Typographie } from "../design-system/Typographie";
 import Image from "next/image";
 import { ImportantText } from "../design-system/ImportantText";
+import { useTranslations } from "next-intl";
 
 interface Skills {
   id: number;
@@ -32,6 +33,7 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
 
   const currentSkill = skills[currentSkillIndex];
 
+  const t = useTranslations(); // Récupère les traductions
   return (
     <div id="myskills" className="w-full min-h-screen gap-[75px] skills-container mx-auto flex items-center justify-center flex-col">
       <div className="flex flex-col items-center gap-[30px]">
@@ -42,7 +44,7 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
             className="uppercase"
             weight="medium"
           >
-            My Skills
+            {t("skills.tag")}
           </Typographie>
         </ImportantText>
         <Typographie
@@ -51,10 +53,10 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
           variant="h3"
           theme="secondary"
         >
-          Discover the Technologies that
+          {t("skills.titre1")}
           <Typographie variant="h3" theme="tercery">
             {" "}
-            i work with
+            {t("skills.titre2")}
           </Typographie>
         </Typographie>
       </div>

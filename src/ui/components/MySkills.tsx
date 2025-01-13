@@ -13,6 +13,7 @@ async function getSkills() {
 }
 
 const MySkills = async () => {
+  
   const skills = await getSkills();
   return <MySkillsClient skills={skills} />;
 };

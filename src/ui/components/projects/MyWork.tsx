@@ -2,6 +2,7 @@ import { Button } from "@/ui/design-system/Button";
 import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Typographie } from "@/ui/design-system/Typographie";
 import { PrismaClient } from "@prisma/client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -35,6 +36,7 @@ interface Project {
 }
 
 const MyWork = async () => {
+  const t = useTranslations(); // Récupère les traductions
   const projects = await getProjects();
   return (
     <div
@@ -50,7 +52,7 @@ const MyWork = async () => {
               className="uppercase"
               weight="medium"
             >
-              My Work
+              {t("work.tag")}
             </Typographie>
           </ImportantText>
           <Typographie
@@ -59,10 +61,10 @@ const MyWork = async () => {
             variant="h3"
             theme="secondary"
           >
-            Let’s Discover the latests
+            {t("work.titre1")}
             <Typographie variant="h3" theme="tercery">
               {" "}
-              Project i made
+              {t("work.titre2")}
             </Typographie>
           </Typographie>
         </div>

@@ -9,6 +9,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextAnimation from "./TextAnimation";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +23,8 @@ const Header = () => {
       imagesRef.current.push(el); // Ajouter seulement les éléments non déjà dans le tableau
     }
   };
+
+  const t = useTranslations(); // Récupère les traductions
 
   useEffect(() => {
     if (headerRef.current) {
@@ -113,7 +116,7 @@ const Header = () => {
               theme="secondary"
               textEffect="large"
             >
-              I’m a creative web <br />
+              {t("header.titre1")} <br />
               <Typographie
                 variant="h1"
                 theme="tercery"
@@ -132,7 +135,7 @@ const Header = () => {
                 className=" animate-spin"
               />
               <Typographie variant="link" weight="medium">
-                BASED IN FRANCE
+                {t("header.basedIn")}
               </Typographie>
               <Image
                 alt="logo"
@@ -145,21 +148,19 @@ const Header = () => {
           </div>
 
           <Typographie className="uppercase text-center max-w-[776px]">
-            Hi i’m Boularand Killian, a 18 year old young man passionate about
-            Web technologies and Entrepreneurship. Ready to take this journey
-            with me to discover my personal world and what i do ?
+            {t("header.introText")}
           </Typographie>
           <div className="flex items-center gap-[20px]">
             <Link href="#mywork">
-              <Button>MY WORK</Button>
+              <Button>{t("header.myWork")}</Button>
             </Link>
             <Link href="#myskills">
-              <Button variant="outline">MY SKILLS</Button>
+              <Button variant="outline">{t("header.mySkills")}</Button>
             </Link>
           </div>
         </div>
         <div className="flex flex-col items-center gap-[5px]">
-          <Typographie variant="h6">Explore More</Typographie>
+          <Typographie variant="h6">{t("header.exploreMore")}</Typographie>
           <Image
             alt=""
             className="h-[43px] w-[43px] seemore"

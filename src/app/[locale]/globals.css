@@ -197,3 +197,12 @@ textarea::placeholder {
   background-size: cover;
 }
  
+
+select {
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  text-indent: 1px;
+  text-overflow: '';
+}

@@ -1,0 +1,61 @@
+{
+  "navbar": {
+    "home": "Home",
+    "aboutMe": "About me",
+    "mySkills": "My skills",
+    "myWork": "My work",
+    "contact": "Contact",
+    "resume": "Resume"
+  },
+
+  "header": {
+    "introText": "Hi I’m Boularand Killian, a 18-year-old young man passionate about Web technologies and Entrepreneurship. Ready to take this journey with me to discover my personal world and what I do?",
+    "exploreMore": "Explore More",
+    "basedIn": "BASED IN FRANCE",
+    "myWork": "MY WORK",
+    "mySkills": "MY SKILLS",
+    "titre1": "i'm a creative web",
+    "titre2-dev": "Developper",
+    "titre2-des": "Designer",
+    "titre2-ent": "Entrepreneur"
+  },
+  "aboutMe": {
+    "introText": "For the past two years, I have immersed myself in the world of coding and interface design, a passion that began as soon as I discovered the endless possibilities of the digital world. I am currently a student at L'Ecole By CCI Haute-Savoie, studying in the digital field, where I continue to develop my skills in a dynamic and innovative environment. Before that, I earned a high school diploma in STIDD, (Sciences and Technologies of Engineering and Sustainable Development), a program that provided me with a solid foundation in engineering and sustainable development—fields that still influence my projects today.",
+    "goal": "My goal is to combine my technical and creative knowledge to become an entrepreneur in the tech industry, where I can create solutions that push the boundaries of innovation and efficiency.",
+    "followMe": "Follow me",
+    "socialLinks": {
+      "instagram": "Instagram",
+      "github": "Github",
+      "linkedin": "Linkedin"
+    },
+    "titre1": "Let's talk a bit",
+    "titre": " About my",
+    "titre2": "Background",
+    "passions": "passions"
+  },
+  "form": {
+    "contactTitle": "Contact me",
+    "formTitle": "Let’s work together and bring your ideas to life",
+    "formDescription": "Contact me or my agency,",
+    "agencyName": "Axis Studio",
+    "formPlaceholders": {
+      "name": "Enter Your name",
+      "email": "Enter Your Email",
+      "business": "Business name",
+      "phone": "Phone Number",
+      "message": "Enter your message"
+    },
+    "submit": "SUBMIT",
+    "sending": "Sending..."
+  },
+  "skills": {
+    "titre1": "Discover the Technologies that",
+    "titre2": "i work with",
+    "tag": "My skills"
+  },
+  "work": {
+    "titre1": "Let's Discover the latest",
+    "titre2": "Project i made",
+    "tag": "My work"
+  }
+}

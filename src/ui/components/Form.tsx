@@ -8,6 +8,7 @@ import { Links } from "../design-system/Links";
 import { Inputs } from "../design-system/Inputs";
 import { Button } from "../design-system/Button";
 import { IoIosSend } from "react-icons/io";
+import { useTranslations } from "next-intl";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ const Form = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const t = useTranslations();
 
   const handleChange =
     (field: string) =>
@@ -71,7 +73,7 @@ const Form = () => {
               className="uppercase"
               weight="medium"
             >
-              Contact me
+              {t("form.contactTitle")}
             </Typographie>
           </ImportantText>
           <Typographie
@@ -80,21 +82,21 @@ const Form = () => {
             variant="h3"
             theme="secondary"
           >
-            Let’s work together and bring
+            {t("form.formTitle")}
             <Typographie variant="h3" theme="tercery">
               {" "}
-              your ideas to life
+              {t("form.formTitle").split(" ")[4]} {/* "your ideas to life" */}
             </Typographie>
           </Typographie>
 
           <Typographie className="max-w-[434px] text-center inline-block">
-            “Contact me or my agency,{" "}
+            {t("form.formDescription")}
             <Links
               link="https://frontend-axis.vercel.app"
               variant="externe"
               className="inline-block"
             >
-              Axis Studio
+              {t("form.agencyName")}
             </Links>
             , to turn your vision into reality.
             <span className="inline-flex items-center">
@@ -103,7 +105,7 @@ const Form = () => {
                 src="/img/svg/magic.svg"
                 width={18}
                 height={18}
-                className="inline-block align-middle ml-2" // Utilisation de 'align-middle' pour l'aligner verticalement avec le texte
+                className="inline-block align-middle ml-2"
               />
             </span>
           </Typographie>
@@ -117,7 +119,7 @@ const Form = () => {
               required
               typeOfInput="text"
               icon="/img/svg/nameInput.svg"
-              placeHolder="Enter Your name"
+              placeHolder={t("form.formPlaceholders.name")}
               value={formData.name}
               onChange={handleChange("name")}
             />
@@ -125,7 +127,7 @@ const Form = () => {
               required
               typeOfInput="text"
               icon="/img/svg/envelope.svg"
-              placeHolder="Enter Your Email"
+              placeHolder={t("form.formPlaceholders.email")}
               value={formData.email}
               onChange={handleChange("email")}
             />
@@ -134,7 +136,7 @@ const Form = () => {
             <Inputs
               typeOfInput="text"
               icon="/img/svg/job.svg"
-              placeHolder="Business name"
+              placeHolder={t("form.formPlaceholders.business")}
               value={formData.business}
               onChange={handleChange("business")}
             />
@@ -142,7 +144,7 @@ const Form = () => {
               required
               typeOfInput="text"
               icon="/img/svg/mobile.svg"
-              placeHolder="Phone Number"
+              placeHolder={t("form.formPlaceholders.phone")}
               value={formData.phone}
               onChange={handleChange("phone")}
             />
@@ -151,7 +153,7 @@ const Form = () => {
             className="h-[200px]"
             typeOfInput="textarea"
             icon="/img/svg/messages.svg"
-            placeHolder="Enter your message"
+            placeHolder={t("form.formPlaceholders.message")}
             value={formData.message}
             onChange={handleChange("message")}
           />
@@ -161,7 +163,7 @@ const Form = () => {
             className="w-full text-primary"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Sending..." : "SUBMIT"}
+            {isSubmitting ? t("form.sending") : t("form.submit")}
           </Button>
         </form>
       </div>

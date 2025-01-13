@@ -2,9 +2,16 @@
 
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 
 const TextAnimation = () => {
-  const words = ["developer", "designer", "entrepreneur"];
+  const t = useTranslations(); // Récupère les traductions
+
+  const words = [
+    t("header.titre2-dev"),
+    t("header.titre2-des"),
+    t("header.titre2-ent"),
+  ];
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
