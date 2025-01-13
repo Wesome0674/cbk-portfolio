@@ -1,8 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
-import { ImportantText } from "../design-system/ImportantText";
 import { Typographie } from "../design-system/Typographie";
-import { useTranslations } from "next-intl";
+import PassionTitle from "./PassionTitle";
 
 const prisma = new PrismaClient();
 
@@ -16,17 +15,11 @@ async function getPassions() {
 }
 
 export default async function PassionSlider() {
-  const t = useTranslations();
   const passions = await getPassions(); // Appel de la fonction pour récupérer les données
- 
 
   return (
     <div className="max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
-      <ImportantText img="/img/svg/Marker.svg">
-        <Typographie variant="h4" className="font-calfine text-center uppercase">
-          {t("aboutMe.passions")}
-        </Typographie>
-      </ImportantText>
+      <PassionTitle />
       <div className="overflow-hidden w-full">
         <div className="flex items-center gap-[14px] w-max animate-slider">
           {[...passions, ...passions].map((passion, index) => (
