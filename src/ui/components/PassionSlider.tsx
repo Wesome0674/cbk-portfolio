@@ -1,38 +1,35 @@
 import { PrismaClient } from "@prisma/client";
-import Image from "next/image";
-import { Typographie } from "../design-system/Typographie";
-import PassionTitle from "./PassionTitle";
+import PassionSliderClient from "./PassionSliderClient";
+import { useLocale } from "next-intl"; // Utilisation de next-intl pour récupérer la langue dynamique
 
 const prisma = new PrismaClient();
 
-async function getPassions() {
+// Récupérer les passions avec leurs traductions
+async function getPassions(locale: string) {
   const passions = await prisma.passion.findMany({
     orderBy: {
       id: "asc",
+    },
+    include: {
+      translations: {
+        where: {
+          language: locale,
+        },
+      },
     },
   });
   return passions;
 }
 
-export default async function PassionSlider() {
-  const passions = await getPassions(); // Appel de la fonction pour récupérer les données
+export default async function PassionServer() {
+  // Utiliser useLocale côté serveur pour obtenir la langue dynamique
+  const locale = useLocale(); // Prend la langue dynamique de l'utilisateur, qui peut être 'fr', 'en', etc.
+  
+  if (!locale) {
+    return <div>Error: Locale not available</div>;
+  }
 
-  return (
-    <div className="max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
-      <PassionTitle />
-      <div className="overflow-hidden w-full">
-        <div className="flex items-center gap-[14px] w-max animate-slider">
-          {[...passions, ...passions].map((passion, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <Typographie className="uppercase" variant="h6">
-                {passion.name}
-              </Typographie>
-              <Image alt="" src="/img/svg/travel.svg" width={24} height={24} />
-              <div className="w-[50px] h-[4px] bg-primary"></div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  const passions = await getPassions(locale); // Passer la langue dynamique ici
+
+  return <PassionSliderClient passions={passions} />;
 }

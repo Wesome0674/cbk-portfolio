@@ -98,7 +98,7 @@ const Form = () => {
             >
               {t("form.agencyName")}
             </Links>
-            ,{t("form.descr")}
+             {t("form.descr")}
             <span className="inline-flex items-center">
               <Image
                 alt="Magic Icon"

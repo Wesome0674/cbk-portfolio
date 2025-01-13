@@ -13,7 +13,18 @@ datasource db {
 model Passion {
   id          Int          @id @default(autoincrement())
   name        String       @unique
-  icon        String       
+  icon        String
+  translations   PassionTranslation[]   
+}
+
+model PassionTranslation {
+  id          Int      @id @default(autoincrement())
+  passionId   Int
+  language    String   // 'fr', 'en', 'es', etc.
+  translatedName String
+
+  passion     Passion  @relation(fields: [passionId], references: [id])
+  @@unique([passionId, language])  // Uniquement une traduction par langue
 }
 
 model Project {
