@@ -62,5 +62,15 @@
     "tag": "Mi trabajo",
     "seeMoreDetails": "ver más detalles",
     "moreComingSoon": "más próximamente"
+  },
+  "projectPage": {
+    "process" : "proceso de creación",
+    "visite": "visitar sitio",
+    "github": "Visitar Github",
+    "tools": "tecnologías",
+    "year": "año",
+    "duration": "duración",
+    "roles": "roles",
+    "goBack": "ver todos los proyectos"
   }
 }
