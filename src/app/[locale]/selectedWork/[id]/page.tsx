@@ -20,6 +20,7 @@ async function fetchProject(id: string) {
       },
     },
   });
+
   return project;
 }
 
