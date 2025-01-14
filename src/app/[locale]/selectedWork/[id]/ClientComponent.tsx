@@ -1,15 +1,71 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
 import { Typographie } from "@/ui/design-system/Typographie";
 import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Button } from "@/ui/design-system/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "@/i18n/routing";
 
-const ClientComponent = ({ locale, project, translations }) => {
-  const pathname = usePathname();
+// Définition des types
+type Translation = {
+  language: string;
+  translatedProcessDetails: string;
+};
+
+type Technology = {
+  id: number;
+  name: string;
+};
+
+type Role = {
+  id: number;
+  name: string;
+};
+
+type ImageItem = {
+  id: number;
+  url: string;
+};
+
+type Project = {
+  id: number;
+  name: string;
+  translations: Translation[];
+  processDetails: string;
+  liveSiteUrl: string;
+  githubRepoUrl: string;
+  technologies: Technology[];
+  roles: Role[];
+  createdYear: string;
+  duration: number;
+  images: ImageItem[];
+};
+
+type Translations = {
+  process: string;
+  visite: string;
+  github: string;
+  tools: string;
+  year: string;
+  duration: string;
+  roles: string;
+  goBack: string;
+};
+
+type ClientComponentProps = {
+  locale: string;
+  project: Project;
+  translations: Translations;
+};
+
+const ClientComponent: React.FC<ClientComponentProps> = ({
+  locale,
+  project,
+  translations,
+}) => {
+  const router = useRouter();
 
   const processDetailsTranslation = project.translations.find(
     (translation) => translation.language === locale
@@ -136,8 +192,8 @@ const ClientComponent = ({ locale, project, translations }) => {
               </div>
             </div>
           </div>
-          <div
-            onClick={() => (window.location.href = "/")}
+          <Link
+            href={`/${locale}/#work`}
             className="flex items-center gap-[5px] cursor-pointer"
           >
             <Image alt="" src="/img/svg/goBack.svg" width={24} height={24} />
@@ -150,7 +206,7 @@ const ClientComponent = ({ locale, project, translations }) => {
             >
               {translations.goBack}
             </Typographie>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="flex-1 pt-[105px] space-y-[35px]">

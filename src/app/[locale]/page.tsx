@@ -8,9 +8,8 @@ import MySkills from "@/ui/components/MySkills";
 import SideBar from "@/ui/components/navigation/SideBar";
 import { useLocale } from "next-intl";
 
-
 export default function Home() {
-   const locale = useLocale();
+  const locale = useLocale();
   return (
     <div className="relative">
       <SideBar />

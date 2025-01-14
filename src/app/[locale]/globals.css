@@ -206,3 +206,7 @@ select {
   text-indent: 1px;
   text-overflow: '';
 }
+
+.loader {
+ width: clamp(250px ,20.417vw, 392px);
+}
