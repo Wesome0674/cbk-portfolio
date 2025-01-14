@@ -20,7 +20,7 @@ export default function PassionSliderClient({
   const t = useTranslations();
   
   return (
-    <div className="max-w-[408px] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
+    <div className="lg:max-w-[408px] max-w-[100%] overflow-hidden border-t border-b border-primary gap-[13px] py-[20px] flex flex-col w-fit items-center">
       <ImportantText img="/img/svg/Marker.svg">
         <Typographie
           variant="h4"
