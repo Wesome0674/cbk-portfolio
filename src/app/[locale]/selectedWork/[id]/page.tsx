@@ -30,6 +30,7 @@ async function fetchProject(id: string) {
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const locale = await getLocale();
+  console.log("locale projet: ", locale)
  
   const t = await getTranslations("projectPage"); 
   const project = await fetchProject((await params).id); 
@@ -41,8 +42,6 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
     );
   }
-
-  console.log(locale)
   const processDetailsTranslation = project.translations.find(
     (translation) => translation.language === locale
   )?.translatedProcessDetails;

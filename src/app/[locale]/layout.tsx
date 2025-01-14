@@ -22,6 +22,8 @@ export default async function RootLayout({
 }>) {
   const messages = await getMessages();
   const { locale } = await params; 
+
+  console.log("locale page: ", locale)
   
   return (
     <html lang={locale} className="scroll-smooth">

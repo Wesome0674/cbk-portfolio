@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { ImportantText } from "@/ui/design-system/ImportantText";
+import { useRouter } from "next/router";
 
 interface Project {
   id: number;
@@ -22,6 +23,7 @@ interface MyWorkClientProps {
 
 const MyWorkClient: React.FC<MyWorkClientProps> = ({ projects }) => {
   const t = useTranslations();
+  const router = useRouter();
 
   return (
     <div
@@ -78,16 +80,14 @@ const MyWorkClient: React.FC<MyWorkClientProps> = ({ projects }) => {
                       {project.name}
                     </Typographie>
                     <Typographie className="max-w-[420px]">
-                      {
-                        project.translations[0]?.translatedDescription ||
-                          project.description
-                      }
+                      {project.translations[0]?.translatedDescription ||
+                        project.description}
                     </Typographie>
-                    <Link href={`/selectedWork/${project.id}`}>
+                    <div onClick={() => router.push(`/selectedWork/${project.id}`)}>
                       <Button variant="outline">
                         {t("work.seeMoreDetails")}
                       </Button>
-                    </Link>
+                    </div>
                   </div>
                 </div>
 
