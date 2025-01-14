@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Typographie } from "../design-system/Typographie";
 import Image from "next/image";
 import { ImportantText } from "../design-system/ImportantText";
+import { useTranslations } from "next-intl";
 
 interface Skills {
   id: number;
@@ -35,6 +36,7 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
   }, [currentSkillIndex, skills]);
 
   const currentSkill = skills[currentSkillIndex];
+  const t = useTranslations("skills");
 
   return (
     <div
@@ -49,7 +51,7 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
             className="uppercase"
             weight="medium"
           >
-            Mes compétences
+           {t("tag")}
           </Typographie>
         </ImportantText>
         <Typographie
@@ -58,10 +60,10 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
           variant="h3"
           theme="secondary"
         >
-          Mon parcours
+          {t("titre1")}
           <Typographie variant="h3" theme="tercery">
             {" "}
-            professionnel
+            {t("titre2")}
           </Typographie>
         </Typographie>
       </div>
