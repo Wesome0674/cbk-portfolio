@@ -34,7 +34,7 @@ const ClientComponent = ({ locale, project, translations }) => {
                 textEffect="large"
                 weight="medium"
               >
-                {project.id < 10 ? 0${project.id} : project.id}
+                {project.id < 10 ? `0${project.id}` : project.id}
               </Typographie>
             </div>
             <hr className="w-full border border-primary" />
@@ -135,7 +135,7 @@ const ClientComponent = ({ locale, project, translations }) => {
             </div>
           </div>
           <Link
-            href={/${locale}/#work}
+            href={`/${locale}/#work`}
             className="flex items-center gap-[5px] cursor-pointer"
           >
             <Image alt="" src="/img/svg/goBack.svg" width={24} height={24} />
@@ -157,7 +157,7 @@ const ClientComponent = ({ locale, project, translations }) => {
             key={item.id}
             className="w-full aspect-video rounded-[10px]"
             style={{
-              backgroundImage: url(${item.url}),
+              backgroundImage: `url(${item.url})`, // Ajout des guillemets autour de l'URL
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "center",
