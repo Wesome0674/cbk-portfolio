@@ -5,25 +5,29 @@ import { Typographie } from "../../design-system/Typographie";
 import { Button } from "../../design-system/Button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { ImportantText } from "@/ui/design-system/ImportantText";
-import { useRouter } from "next/router";
+import { useRouter } from "@/i18n/routing";
 
 interface Project {
   id: number;
   name: string;
   description: string;
   images: { id: number; url: string; projectId: number }[];
-  translations: { translatedDescription: string }[]; // Inclure les traductions
+  translations: { translatedDescription: string }[];
 }
 
 interface MyWorkClientProps {
   projects: Project[];
+  locale: string; // Passe la locale au composant client
 }
 
 const MyWorkClient: React.FC<MyWorkClientProps> = ({ projects }) => {
-  const t = useTranslations();
   const router = useRouter();
+  const t = useTranslations();
+
+  const handleNavigation = (projectId: number) => {
+    router.push(`/selectedWork/${projectId}`);
+  };
 
   return (
     <div
@@ -83,7 +87,7 @@ const MyWorkClient: React.FC<MyWorkClientProps> = ({ projects }) => {
                       {project.translations[0]?.translatedDescription ||
                         project.description}
                     </Typographie>
-                    <div onClick={() => router.push(`/selectedWork/${project.id}`)}>
+                    <div onClick={() => handleNavigation(project.id)}>
                       <Button variant="outline">
                         {t("work.seeMoreDetails")}
                       </Button>

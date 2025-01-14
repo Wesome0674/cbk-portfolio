@@ -4,6 +4,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// Récupère les projets avec les traductions en fonction de la langue
 async function getProjects(locale: string) {
   const projects = await prisma.project.findMany({
     orderBy: { id: "asc" },
@@ -20,8 +21,12 @@ async function getProjects(locale: string) {
 }
 
 const MyWork = async ({ locale }: { locale: string }) => {
-  const projects = await getProjects(locale); // Passer la locale pour récupérer les traductions
-  return <MyWorkClient projects={projects} />;
+  const projects = await getProjects(locale);
+
+  return (
+    // Passe les projets et la locale au composant client
+    <MyWorkClient projects={projects} locale={locale} />
+  );
 };
 
 export default MyWork;
