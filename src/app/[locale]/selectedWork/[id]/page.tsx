@@ -8,7 +8,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { getLocale } from "next-intl/server";
 
-async function fetchProject(id: string, locale: string) {
+async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
     where: { id: parseInt(id, 10) },
     include: {
