@@ -32,7 +32,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const locale = await getLocale();
  
   const t = await getTranslations("projectPage"); 
-  const project = await fetchProject((await params).id, locale); /
+  const project = await fetchProject((await params).id, locale); 
 
   if (!project) {
     return (
