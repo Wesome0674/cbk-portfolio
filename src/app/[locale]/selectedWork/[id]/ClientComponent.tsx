@@ -4,9 +4,10 @@ import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Button } from "@/ui/design-system/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "@/i18n/routing";
 
 const ClientComponent = ({ locale, project, translations }) => {
-
+  const router = useRouter();
 
   const processDetailsTranslation = project.translations.find(
     (translation) => translation.language === locale
@@ -14,6 +15,7 @@ const ClientComponent = ({ locale, project, translations }) => {
 
   return (
     <div className="px-4 pb-4 flex w-full gap-[35px] relative flex-col lg:flex-row">
+      {/* Partie gauche (détails du projet) */}
       <div className="pt-[105px] space-y-[35px] flex-1 lg:sticky lg:top-0 h-full">
         <div className="space-y-[35px]">
           <div className="space-y-[10px]">
@@ -150,13 +152,14 @@ const ClientComponent = ({ locale, project, translations }) => {
           </Link>
         </div>
       </div>
+      {/* Partie droite (images du projet) */}
       <div className="flex-1 pt-[105px] space-y-[35px]">
         {project.images.map((item) => (
           <div
             key={item.id}
             className="w-full aspect-video rounded-[10px]"
             style={{
-              backgroundImage: `url(${item.url})`, // Ajout des guillemets autour de l'URL
+              backgroundImage: `url(${item.url})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "center",
