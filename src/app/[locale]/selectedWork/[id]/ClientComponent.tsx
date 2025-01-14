@@ -6,7 +6,7 @@ import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Button } from "@/ui/design-system/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "@/i18n/routing";
+
 
 // Définition des types
 type Translation = {
@@ -65,7 +65,6 @@ const ClientComponent: React.FC<ClientComponentProps> = ({
   project,
   translations,
 }) => {
-  const router = useRouter();
 
   const processDetailsTranslation = project.translations.find(
     (translation) => translation.language === locale
