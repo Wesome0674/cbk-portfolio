@@ -18,7 +18,7 @@ export default function Home() {
         <Header />
         <AboutMe />
         <MySkills locale={locale} />
-        <MyWork />
+        <MyWork locale={locale} />
         <Form />
       </div>
 

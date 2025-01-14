@@ -28,18 +28,30 @@ model PassionTranslation {
 }
 
 model Project {
-  id             Int           @id @default(autoincrement())
+  id             Int                   @id @default(autoincrement())
   name           String
   description    String
-  images         Image[]
   processDetails String
+  images         Image[]
   liveSiteUrl    String
   githubRepoUrl  String
   createdYear    Int
   duration       String
-  technologies   Technology[]  // Many-to-many relation
-  roles          Role[]        // Many-to-many relation
-  createdAt      DateTime      @default(now())
+  technologies   Technology[]         // Many-to-many relation
+  roles          Role[]               // Many-to-many relation
+  createdAt      DateTime             @default(now())
+  translations   ProjectTranslation[] // Traductions associées
+}
+
+model ProjectTranslation {
+  id              Int      @id @default(autoincrement())
+  projectId       Int
+  language        String   // 'fr', 'en', 'es', etc.
+  translatedDescription String
+  translatedProcessDetails String
+
+  project         Project  @relation(fields: [projectId], references: [id])
+  @@unique([projectId, language]) // Une seule traduction par langue par projet
 }
 
 model Image {

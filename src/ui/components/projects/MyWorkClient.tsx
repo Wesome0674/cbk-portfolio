@@ -1,5 +1,4 @@
-// app/MyWorkClient.tsx
-"use client"; // Le fichier est un composant client, donc ce code sera exécuté côté client
+"use client";
 
 import React from "react";
 import { Typographie } from "../../design-system/Typographie";
@@ -14,6 +13,7 @@ interface Project {
   name: string;
   description: string;
   images: { id: number; url: string; projectId: number }[];
+  translations: { translatedDescription: string }[]; // Inclure les traductions
 }
 
 interface MyWorkClientProps {
@@ -21,7 +21,7 @@ interface MyWorkClientProps {
 }
 
 const MyWorkClient: React.FC<MyWorkClientProps> = ({ projects }) => {
-  const t = useTranslations(); // Utiliser les traductions
+  const t = useTranslations();
 
   return (
     <div
@@ -78,7 +78,10 @@ const MyWorkClient: React.FC<MyWorkClientProps> = ({ projects }) => {
                       {project.name}
                     </Typographie>
                     <Typographie className="max-w-[420px]">
-                      {project.description}
+                      {
+                        project.translations[0]?.translatedDescription ||
+                          project.description
+                      }
                     </Typographie>
                     <Link href={`/selectedWork/${project.id}`}>
                       <Button variant="outline">
