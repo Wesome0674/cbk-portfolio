@@ -1,21 +1,27 @@
-
-import React from "react";
-import MySkillsClient from "./MySkillsClient";
 import { PrismaClient } from "@prisma/client";
+import MySkillsClient from "./MySkillsClient";
 
 const prisma = new PrismaClient();
 
-async function getSkills() {
+async function getSkills(locale: string) {
   const skills = await prisma.skills.findMany({
-    orderBy: { id: "asc" },
+    orderBy: {
+      id: "asc",
+    },
+    include: {
+      translations: {
+        where: {
+          language: locale,
+        },
+      },
+    },
   });
+
   return skills;
 }
 
-const MySkills = async () => {
-  
-  const skills = await getSkills();
-  return <MySkillsClient skills={skills} />;
-};
+export default async function MySkillsServer({ locale }: { locale: string }) {
+  const skills = await getSkills(locale);
 
-export default MySkills;
+  return <MySkillsClient skills={skills} locale={locale} />;
+}

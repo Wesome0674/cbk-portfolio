@@ -63,9 +63,21 @@ model Role {
 
 
 model Skills {
-  id             Int           @id @default(autoincrement())
-  year           Int
-  description    String
-  location       String
-  img            String
+  id              Int                 @id @default(autoincrement())
+  year            Int
+  description     String
+  location        String
+  img             String
+  translations    SkillsTranslation[]
+}
+
+model SkillsTranslation {
+  id              Int      @id @default(autoincrement())
+  skillId         Int
+  language        String   // 'fr', 'en', 'es', etc.
+  translatedDescription String
+  translatedLocation String
+
+  skill           Skills   @relation(fields: [skillId], references: [id])
+  @@unique([skillId, language])  // Uniquement une traduction par langue
 }
