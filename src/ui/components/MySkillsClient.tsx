@@ -19,12 +19,10 @@ interface Skills {
 
 interface MySkillsClientProps {
   skills: Skills[];
-  locale: string;
 }
 
-const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills, locale }) => {
+const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills }) => {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
-  const [currentLocale, setCurrentLocale] = useState(locale);
 
   useEffect(() => {
     if (skills.length === 0) return;
@@ -35,10 +33,6 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills, locale }) => {
 
     return () => clearTimeout(skillChangeTimeout);
   }, [currentSkillIndex, skills]);
-
-  useEffect(() => {
-    setCurrentLocale(locale);
-  }, [locale]);
 
   const currentSkill = skills[currentSkillIndex];
 
@@ -78,8 +72,9 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills, locale }) => {
         >
           <div className="space-y-[6px] max-w-[419px]">
             <Typographie className="uppercase">
-              {currentSkill.translations.find((t) => t.language === currentLocale)
-                ?.translatedLocation || currentSkill.location}
+              {currentSkill.translations.length > 0
+                ? currentSkill.translations[0].translatedLocation
+                : currentSkill.location}
             </Typographie>
             <div>
               <Typographie
@@ -91,8 +86,9 @@ const MySkillsClient: React.FC<MySkillsClientProps> = ({ skills, locale }) => {
                 {currentSkill.year}
               </Typographie>
               <Typographie variant="link" className="capitalize">
-                {currentSkill.translations.find((t) => t.language === currentLocale)
-                  ?.translatedDescription || currentSkill.description}
+                {currentSkill.translations.length > 0
+                  ? currentSkill.translations[0].translatedDescription
+                  : currentSkill.description}
               </Typographie>
             </div>
           </div>

@@ -16,12 +16,11 @@ async function getSkills(locale: string) {
       },
     },
   });
-
   return skills;
 }
 
 export default async function MySkillsServer({ locale }: { locale: string }) {
   const skills = await getSkills(locale);
 
-  return <MySkillsClient skills={skills} locale={locale} />;
+  return <MySkillsClient skills={skills} />;
 }
