@@ -4,7 +4,6 @@ import { getTranslations } from "next-intl/server";
 import { getLocale } from "next-intl/server";
 import ClientComponent from "./ClientComponent";
 
-// Fonction asynchrone pour récupérer le projet
 async function fetchProject(id: string) {
   const project = await prisma.project.findUnique({
     where: { id: parseInt(id, 10) },
@@ -24,14 +23,7 @@ async function fetchProject(id: string) {
   return project;
 }
 
-// Type de `params` comme étant un objet avec une clé `id` de type `string`
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-const Page = async ({ params }: PageProps) => {
+const Page = async ({ params }: { params: { id: string } }) => {
   const locale = await getLocale();
   const translations = await getTranslations("projectPage");
   const project = await fetchProject(params.id);
@@ -56,7 +48,9 @@ const Page = async ({ params }: PageProps) => {
     goBack: translations("goBack"),
   };
 
-  return <ClientComponent locale={locale} project={project} translations={t} />;
+  return (
+    <ClientComponent locale={locale} project={project} translations={t} />
+  );
 };
 
 export default Page;

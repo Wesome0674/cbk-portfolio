@@ -1,70 +1,13 @@
-"use client";
-
 import React from "react";
 import { Typographie } from "@/ui/design-system/Typographie";
 import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Button } from "@/ui/design-system/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "@/i18n/routing";
 
-
-// Définition des types
-type Translation = {
-  language: string;
-  translatedProcessDetails: string;
-};
-
-type Technology = {
-  id: number;
-  name: string;
-};
-
-type Role = {
-  id: number;
-  name: string;
-};
-
-type ImageItem = {
-  id: number;
-  url: string;
-};
-
-type Project = {
-  id: number;
-  name: string;
-  translations: Translation[];
-  processDetails: string;
-  liveSiteUrl: string;
-  githubRepoUrl: string;
-  technologies: Technology[];
-  roles: Role[];
-  createdYear: string;
-  duration: number;
-  images: ImageItem[];
-};
-
-type Translations = {
-  process: string;
-  visite: string;
-  github: string;
-  tools: string;
-  year: string;
-  duration: string;
-  roles: string;
-  goBack: string;
-};
-
-type ClientComponentProps = {
-  locale: string;
-  project: Project;
-  translations: Translations;
-};
-
-const ClientComponent: React.FC<ClientComponentProps> = ({
-  locale,
-  project,
-  translations,
-}) => {
+const ClientComponent = ({ locale, project, translations }) => {
+  const router = useRouter();
 
   const processDetailsTranslation = project.translations.find(
     (translation) => translation.language === locale
@@ -91,7 +34,7 @@ const ClientComponent: React.FC<ClientComponentProps> = ({
                 textEffect="large"
                 weight="medium"
               >
-                {project.id < 10 ? `0${project.id}` : project.id}
+                {project.id < 10 ? 0${project.id} : project.id}
               </Typographie>
             </div>
             <hr className="w-full border border-primary" />
@@ -192,7 +135,7 @@ const ClientComponent: React.FC<ClientComponentProps> = ({
             </div>
           </div>
           <Link
-            href={`/${locale}/#work`}
+            href={/${locale}/#work}
             className="flex items-center gap-[5px] cursor-pointer"
           >
             <Image alt="" src="/img/svg/goBack.svg" width={24} height={24} />
@@ -214,7 +157,7 @@ const ClientComponent: React.FC<ClientComponentProps> = ({
             key={item.id}
             className="w-full aspect-video rounded-[10px]"
             style={{
-              backgroundImage: `url(${item.url})`,
+              backgroundImage: url(${item.url}),
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               backgroundPosition: "center",
