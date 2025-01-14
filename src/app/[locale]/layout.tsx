@@ -35,7 +35,7 @@ export default async function RootLayout({
         />
 
         <div className="container mx-auto">
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
             <Context>{children}</Context>
           </NextIntlClientProvider>
         </div>
