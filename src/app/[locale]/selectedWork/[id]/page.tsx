@@ -25,8 +25,6 @@ async function fetchProject(id: string) {
 
 // Fonction pour obtenir les metadata pour la page dynamique
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  const locale = await getLocale();
-  const translations = await getTranslations("projectPage");
   const project = await fetchProject(params.id);
 
   if (!project) {

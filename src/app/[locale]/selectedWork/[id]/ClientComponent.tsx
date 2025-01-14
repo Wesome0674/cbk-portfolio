@@ -4,11 +4,8 @@ import { ImportantText } from "@/ui/design-system/ImportantText";
 import { Button } from "@/ui/design-system/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "@/i18n/routing";
 
 const ClientComponent = ({ locale, project, translations }) => {
-  const router = useRouter();
-
   const processDetailsTranslation = project.translations.find(
     (translation) => translation.language === locale
   )?.translatedProcessDetails;
