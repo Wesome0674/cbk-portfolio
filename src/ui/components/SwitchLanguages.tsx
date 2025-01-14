@@ -1,12 +1,16 @@
+import { Locale, usePathname, useRouter } from "@/i18n/routing";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import React, { ChangeEvent, useTransition } from "react";
 import { useLocale } from "use-intl";
 
 const SwitchLanguages = () => {
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
+
   const localActive = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
 
   // Map de langue vers le chemin du drapeau
   const flagSrcMap: Record<string, string> = {
@@ -16,10 +20,14 @@ const SwitchLanguages = () => {
   };
 
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = e.target.value;
+    const nextLocale = e.target.value as Locale;
 
     startTransition(() => {
-      router.replace(`/${nextLocale}`);
+      // Recompose l'URL avec la locale choisie
+      router.replace(
+        { pathname, query: params }, // Garde le chemin et les paramètres actuels
+        { locale: nextLocale } // Définit la nouvelle locale
+      );
     });
   };
 
