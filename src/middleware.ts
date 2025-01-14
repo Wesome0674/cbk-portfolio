@@ -4,6 +4,12 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/((?!api|_next|_vercel\\..*).*)'] // this solved: Unable to find `next-intl` locale because the middleware didn't run on this request. 
+  matcher: [
+    // Match all pathnames except for
+    // - … if they start with `/api`, `/_next` or `/_vercel`
+    // - … the ones containing a dot (e.g. `favicon.ico`)
+    '/((?!api|_next|_vercel|.*\\..*).*)',
+    // However, match all pathnames within `/users`, optionally with a locale prefix
+    '/([\\w-]+)?/selectedWork/(.+)'
+  ]
 };
