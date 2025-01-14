@@ -5,5 +5,5 @@ export default createMiddleware(routing);
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(en|fr|es)/:path*", "/selectedWork/:path*"],
+  matcher: ['/((?!api|_next|_vercel\\..*).*)'] // this solved: Unable to find `next-intl` locale because the middleware didn't run on this request. 
 };
