@@ -23,7 +23,11 @@ async function fetchProject(id: string) {
   return project;
 }
 
-const Page = async ({ params }: { params: { id: string } }) => {
+interface PageProps {
+  params: { id: string };
+}
+
+const Page: React.FC<PageProps> = async ({ params }) => {
   const locale = await getLocale();
   const translations = await getTranslations("projectPage");
   const project = await fetchProject(params.id);
