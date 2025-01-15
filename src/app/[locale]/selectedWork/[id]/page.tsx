@@ -169,7 +169,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
             </div>
           </div>
 
-          <Link href={`/${locale}/#work`} className="flex items-center gap-[5px]">
+          <Link href={`/${locale}/#mywork`} className="flex items-center gap-[5px]">
             <Image alt="" src="/img/svg/goBack.svg" width={24} height={24} />
             <Typographie
               variant="h6"
