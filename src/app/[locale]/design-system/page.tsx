@@ -12,7 +12,7 @@ const page = () => {
   return (
     <>
       <NavBar />
-      <main className="p-4 w-full min-h-screen space-y-6 grid place-content-center">
+      <main className="p-4 w-full min-h-screen space-y-6 grid place-content-center pt-[200px]">
         <Typographie
           textEffect="large"
           variant="display"
