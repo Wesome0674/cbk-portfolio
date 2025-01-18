@@ -8,6 +8,7 @@ import MySkills from "@/ui/components/MySkills";
 import SideBar from "@/ui/components/navigation/SideBar";
 import { useLocale } from "next-intl";
 
+
 export default function Home() {
   const locale = useLocale();
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <MySkills locale={locale} />
         <MyWork locale={locale} />
         <Form />
+      
       </div>
 
       <div className="fixed bottom-4 right-4 z-50">
