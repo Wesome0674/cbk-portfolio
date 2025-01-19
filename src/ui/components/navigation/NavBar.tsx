@@ -52,7 +52,7 @@ const NavBar = () => {
         </ul>
         <div className="flex items-center gap-[35px] w-full justify-end">
           <div className=" items-center gap-2 lg:flex hidden">
-            <Links link="#" variant="externe">
+            <Links link="/cv.pdf" variant="externe">
               {t("navbar.resume")}
             </Links>
             <HiOutlineExternalLink size={18} />
