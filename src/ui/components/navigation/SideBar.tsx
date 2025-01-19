@@ -34,7 +34,7 @@ const SideBar = () => {
             className="max-w-max"
           />
           <div className="w-full flex justify-end gap-2  items-center ">
-            <Links link="#" variant="externe">
+            <Links link="/cv.pdf" variant="externe">
               RESUME
             </Links>
             <HiOutlineExternalLink size={18} />
@@ -94,13 +94,13 @@ const SideBar = () => {
             </Link>
           </ul>
           <div className="w-[full] flex flex-col gap-[15px]">
-            <Links link="#" className="w-full" variant="underline">
+            <Links link="https://www.instagram.com/codebykillian.dev/" className="w-full" variant="underline">
               Instagram
             </Links>
-            <Links link="#" className="w-full" variant="underline">
+            <Links link="https://github.com/Wesome0674" className="w-full" variant="underline">
               Github
             </Links>
-            <Links link="#" className="w-full" variant="underline">
+            <Links link="https://www.linkedin.com/in/killian-boularand-461061267/" className="w-full" variant="underline">
               Linkedin
             </Links>
           </div>
