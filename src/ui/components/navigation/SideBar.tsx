@@ -17,7 +17,6 @@ const SideBar = () => {
 
   return (
     <div className="w-full h-full sidebarAnim overflow-y-auto pb-4 fixed top-0 right-0 z-[100] block lg:hidden ">
-    
       <div className="sidebar mx-auto pt-[24px]">
         <div className="w-full flex items-center justify-between border-b border-t border-primary py-6">
           <div
@@ -34,9 +33,11 @@ const SideBar = () => {
             className="max-w-max"
           />
           <div className="w-full flex justify-end gap-2  items-center ">
-            <Links link="/cv.pdf" variant="externe">
-              RESUME
-            </Links>
+            <Link href="/cv.pdf" legacyBehavior>
+              <a download="cv.pdf" className="text-primary underline">
+                RESUME
+              </a>
+            </Link>
             <HiOutlineExternalLink size={18} />
           </div>
         </div>
@@ -94,13 +95,25 @@ const SideBar = () => {
             </Link>
           </ul>
           <div className="w-[full] flex flex-col gap-[15px]">
-            <Links link="https://www.instagram.com/codebykillian.dev/" className="w-full" variant="underline">
+            <Links
+              link="https://www.instagram.com/codebykillian.dev/"
+              className="w-full"
+              variant="underline"
+            >
               Instagram
             </Links>
-            <Links link="https://github.com/Wesome0674" className="w-full" variant="underline">
+            <Links
+              link="https://github.com/Wesome0674"
+              className="w-full"
+              variant="underline"
+            >
               Github
             </Links>
-            <Links link="https://www.linkedin.com/in/killian-boularand-461061267/" className="w-full" variant="underline">
+            <Links
+              link="https://www.linkedin.com/in/killian-boularand-461061267/"
+              className="w-full"
+              variant="underline"
+            >
               Linkedin
             </Links>
           </div>

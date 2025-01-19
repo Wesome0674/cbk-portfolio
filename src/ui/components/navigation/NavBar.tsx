@@ -8,7 +8,7 @@ import Car from "./Car";
 import Link from "next/link";
 import { useNavContext } from "../../../../context/NavContext";
 import SwitchLanguages from "../SwitchLanguages";
-import { useTranslations } from "use-intl";  // Import de la fonction de traduction
+import { useTranslations } from "use-intl"; // Import de la fonction de traduction
 
 const NavBar = () => {
   const { navVisibility, setNavVisibility } = useNavContext();
@@ -52,9 +52,14 @@ const NavBar = () => {
         </ul>
         <div className="flex items-center gap-[35px] w-full justify-end">
           <div className=" items-center gap-2 lg:flex hidden">
-            <Links link="/cv.pdf" variant="externe">
-              {t("navbar.resume")}
-            </Links>
+            <Link href="/cv.pdf" legacyBehavior>
+              <a
+                download="cv.pdf"
+                className="text-primary underline"
+              >
+                {t("navbar.resume")}
+              </a>
+            </Link>
             <HiOutlineExternalLink size={18} />
           </div>
           <SwitchLanguages />
