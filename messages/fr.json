@@ -1,27 +1,26 @@
 {
   "navbar": {
     "home": "Accueil",
-    "aboutMe": "À propos de moi",
-    "mySkills": "Mes compétences",
+    "aboutMe": "A propos de moi",
+    "mySkills": "Mes competences",
     "myWork": "Mon travail",
     "contact": "Contact",
     "resume": "CV"
   },
   "header": {
-    "introText": "Salut, je suis Boularand Killian, un jeune homme de 18 ans passionné par les technologies Web et l'entrepreneuriat. Prêt à entreprendre ce voyage avec moi pour découvrir mon univers et ce que je fais ?",
+    "introText": "Salut, je suis Boularand Killian, un jeune homme de 18 ans passionne par les technologies Web et l'entrepreneuriat. Pret a entreprendre ce voyage avec moi pour decouvrir mon univers et ce que je fais ?",
     "exploreMore": "Explorer davantage",
     "basedIn": "BASE EN FRANCE",
     "myWork": "MON TRAVAIL",
-    "mySkills": "MES COMPÉTENCES",
+    "mySkills": "MES COMPETENCES",
     "titre1": "Je suis un creative web",
     "titre2-dev": "Developpeur",
     "titre2-des": "Designer",
     "titre2-ent": "Entrepreneur"
   },
-
   "aboutMe": {
-    "introText": "Depuis deux ans, je me suis immergé dans l'univers du codage et du design d'interface, une passion née dès que j'ai découvert les possibilités infinies du monde numérique. Je suis actuellement étudiant à l'Ecole By CCI Haute-Savoie, dans le domaine du numérique, où je continue à développer mes compétences dans un environnement dynamique et innovant. Avant cela, j'ai obtenu un bac STIDD, (Sciences et Technologies de l'Ingénierie et du Développement Durable), un programme qui m'a fourni une base solide en ingénierie et en développement durable—des domaines qui influencent encore mes projets aujourd'hui.",
-    "goal": "Mon objectif est de combiner mes connaissances techniques et créatives pour devenir entrepreneur dans l'industrie de la tech, où je pourrai créer des solutions qui repoussent les limites de l'innovation et de l'efficacité.",
+    "introText": "Depuis deux ans, je me suis immerge dans l'univers du codage et du design d'interface, une passion nee des que j'ai decouvert les possibilites infinies du monde numerique. Je suis actuellement etudiant a l'Ecole By CCI Haute-Savoie, dans le domaine du numerique, ou je continue a developper mes competences dans un environnement dynamique et innovant. Avant cela, j'ai obtenu un bac STIDD, (Sciences et Technologies de l'Ingenierie et du Developpement Durable), un programme qui m'a fourni une base solide en ingenierie et en developpement durable—des domaines qui influencent encore mes projets aujourd'hui.",
+    "goal": "Mon objectif est de combiner mes connaissances techniques et creatives pour devenir entrepreneur dans l'industrie de la tech, ou je pourrai creer des solutions qui repoussent les limites de l'innovation et de l'efficacite.",
     "followMe": "Suivez-moi",
     "socialLinks": {
       "instagram": "Instagram",
@@ -36,15 +35,15 @@
   "form": {
     "contactTitle": "Contactez-moi",
     "title1": "Travaillons ensemble et",
-    "title2": "Amenons vos idée a la vie",
+    "title2": "Amenons vos idee a la vie",
     "formDescription": "Contacter moi ou mon agence, ",
-    "descr": ", pour transformer votre vision en réalité",
+    "descr": ", pour transformer votre vision en realite",
     "agencyName": "Axis Studio",
     "formPlaceholders": {
       "name": "Entrez votre nom",
       "email": "Entrez votre email",
       "business": "Nom de l'entreprise",
-      "phone": "Numéro de téléphone",
+      "phone": "Numero de telephone",
       "message": "Entrez votre message"
     },
     "submit": "ENVOYER",
@@ -53,22 +52,22 @@
   "skills": {
     "titre1": "Decouvrez les technologies avec",
     "titre2": "les quelles je travaille",
-    "tag": "Mes compétences"
+    "tag": "Mes competences"
   },
   "work": {
-    "titre1": "Découvrer les dernier",
-    "titre2": "Projets que j'ai réalisé",
+    "titre1": "Decouvrer les derniers",
+    "titre2": "Projets que j'ai realise",
     "tag": "Mon travail",
     "seeMoreDetails": "En savoir plus",
     "moreComingSoon": "Plus de projet prochainement"
   },
   "projectPage": {
-    "process" : "processus de creation",
+    "process": "processus de creation",
     "visite": "visiter le site",
     "github": "Visiter le github",
     "tools": "technologies",
-    "year": "Année",
-    "duration": "Durée",
+    "year": "Annee",
+    "duration": "Duree",
     "roles": "roles",
     "goBack": "Voir tout les projets"
   }

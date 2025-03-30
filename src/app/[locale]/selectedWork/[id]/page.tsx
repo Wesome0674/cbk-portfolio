@@ -87,11 +87,14 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
               <Link href={project.liveSiteUrl}>
                 <Button className="uppercase">{t("visite")}</Button>
               </Link>
-              <Link href={project.githubRepoUrl}>
-                <Button className="uppercase" variant="outline">
-                  {t("github")}
-                </Button>
-              </Link>
+              {project.githubRepoUrl && (
+                <Link href={project.githubRepoUrl}>
+                  <Button className="uppercase" variant="outline">
+                    {t("github")}
+                  </Button>
+                </Link>
+              )}
+             
             </div>
           </div>
         </div>

@@ -150,7 +150,7 @@ const Header = () => {
           <Typographie className="uppercase text-center max-w-[776px]">
             {t("header.introText")}
           </Typographie>
-          <div className="flex items-center gap-[20px]">
+          <div className="flex items-center gap-[20px] flex-wrap justify-center">
             <Link href="#mywork">
               <Button>{t("header.myWork")}</Button>
             </Link>

@@ -51,15 +51,11 @@ const NavBar = () => {
           </Links>
         </ul>
         <div className="flex items-center gap-[35px] w-full justify-end">
-          <div className=" items-center gap-2 lg:flex hidden">
-            <Link href="/cv.pdf" legacyBehavior>
-              <a
-                download="cv.pdf"
-                className="text-primary underline"
-              >
-                {t("navbar.resume")}
-              </a>
-            </Link>
+          <div 
+            className="items-center gap-2 lg:flex hidden cursor-pointer" 
+            onClick={() => window.open('/api/download?file=cv.pdf', '_blank')}
+          >
+            {t("navbar.resume")}
             <HiOutlineExternalLink size={18} />
           </div>
           <SwitchLanguages />
